@@ -1,0 +1,507 @@
+<html><!doctype html>
+
+<html lang="en">
+
+<head>
+    <title>Laravel 中文文档</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+    <meta name="author" content="Laravel 中国">
+    <meta name="description" content="Laravel 中文文档, 致力于推动 Laravel, php-fig 等国外 PHP 新技术, 新理念在中国的发展.">
+    <meta name="keywords" content="laravel中国,laravel中文, laravel框架中文, laravel框架中国, php, framework, web, artisans, taylor otwell">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="favicon.png" tppabs="http://laravel-china.qiniudn.com/favicon.png">
+
+    <link href="styles.css" tppabs="http://laravel-china.qiniudn.com/assets/css/styles.css" rel="stylesheet">
+
+    <!--[if IE]><link href="http://laravel-china.qiniudn.com/assets/css/ie.css" rel="stylesheet" type="text/css"><![endif]-->
+
+    <!-- HTML5 elements in less than IE9, yes please! -->
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <!-- If less than IE8 add some JS for the webfont icons -->
+    <!--[if lt IE 8]><script src="http://laravel-china.qiniudn.com/assets/js/ie_font.js"></script><![endif]-->
+
+        
+    
+    <style>
+#documentation nav#docs ul li ul li a {
+font-weight: 600;
+font-size: 13px;
+}
+nav#primary.fixed {
+opacity: .9;
+ position: inherit; 
+top: 0;
+}
+
+p {
+font-size: inherit;
+line-height: 1.4em;
+margin: 0 0 .8em;
+}
+html, body {
+height: 100%;
+font-size: 14px;
+color: #333333;
+font-family: "Heiti SC Light", "Helvetica Neue", Verdana, 微软雅黑, Arial, sans-serif;
+background: #e5e5e5;
+}
+#documentation nav#docs {
+    width: 250px;
+}
+code, kbd, pre, samp {
+    font-size: inherit;
+}
+code {
+background: #F1F1F1;
+color: #f4645f;
+padding: 0 5px;
+border-radius: 3px;
+}
+p {
+line-height: 1.8em;
+}
+#documentation nav#docs {
+width: 170px;
+}
+
+@media only screen and (min-width: 1024px) {
+#documentation #docs-content {
+display: block;
+float: right;
+padding-left: 35px;
+padding-right: 35px;
+width: 830px;
+}
+}
+
+.primary-nav-ul li a {
+border-bottom: 0;
+font-size: 14px;
+padding: 0 0 0 25px;
+width: auto;
+}
+.prettyprint code {
+font-family: Monaco,Consolas,"Lucida Console",monospace;
+font-size: 13px;
+}
+    </style>
+</head>
+
+<body id="index" class="page">
+
+    <!--[if lt IE 7]>
+        <p>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
+    <![endif]-->
+
+    <div id="wrapper">
+
+    <header id="header" role="header">
+    <div class="boxed">
+        <div id="tagline">
+            <h1><a href="index.htm" tppabs="http://laravel-china.org/" style="color:white; font-wight:bold;">Laravel China</a></h1>
+        </div>
+
+        <div id="version">
+            <ul class="nolist">
+                                    <li class="current">
+                        <a href="docs.htm" tppabs="http://laravel-china.org/docs/4-2" title="4.2">4.2</a>
+                    </li>
+                            </ul>
+        </div>
+    </div>
+</header>
+
+<nav id="primary">
+    <div class="boxed">
+        <div id="logo-head">
+            <a href="index.htm" tppabs="http://laravel-china.org/"><img src="logo-head.png" tppabs="http://laravel-china.qiniudn.com/assets/img/logo-head.png" alt="Laravel"></a>
+        </div>
+        <ul class="primary-nav-ul">
+            <li class="current-item"><a href="docs.htm" tppabs="http://laravel-china.org/docs/docs" title="Documentation">文档</a></li>
+            <li><a href="javascript:if(confirm('http://phphub.org/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://phphub.org/'" tppabs="http://phphub.org/" title="PHPhub"  target="_blank">论坛</a></li>
+            <li><a href="javascript:if(confirm('https://github.com/laravel-china/docs  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://github.com/laravel-china/docs'" tppabs="https://github.com/laravel-china/docs"  target="_blank">纠错</a></li>
+            <li><a href="javascript:if(confirm('http://laravel.com/api/4.2/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/api/4.2/'" tppabs="http://laravel.com/api/4.2/" title="Laravel Framework API"  target="_blank">API</a></li>
+        </ul>
+        <a href="#" class="show-primary-nav">菜单</a>
+    </div>
+</nav>
+
+<div id="content">
+
+    <section id="documentation">
+        <article class="boxed">
+
+            <ul class="version-picker--mobile nolist">
+                                <li class="current">
+                    <a href="docs.htm" tppabs="http://laravel-china.org/docs/4-2" title="4.2">4.2</a>
+                </li>
+                            </ul>
+            <a href="#" class="docs-show" data-show-text="Navigate" data-hide-text="Close">Navigate</a>
+
+            <nav id="docs">
+                <ul>
+<li>前言
+
+<ul>
+<li><a href="introduction.htm" tppabs="http://laravel-china.org/docs/introduction">Laravel 介绍</a></li>
+<li><a href="quick.htm" tppabs="http://laravel-china.org/docs/quick">快速入门</a></li>
+<li><a href="releases.htm" tppabs="http://laravel-china.org/docs/releases">框架更新记录</a></li>
+<li><a href="upgrade.htm" tppabs="http://laravel-china.org/docs/upgrade">升级指南</a></li>
+</ul></li>
+<li>快速上手
+
+<ul>
+<li><a href="installation.htm" tppabs="http://laravel-china.org/docs/installation">安装文档</a></li>
+<li><a href="configuration.htm" tppabs="http://laravel-china.org/docs/configuration">配置信息</a></li>
+<li><a href="homestead.htm" tppabs="http://laravel-china.org/docs/homestead">Homestead</a></li>
+<li><a href="lifecycle.htm" tppabs="http://laravel-china.org/docs/lifecycle">程序的生命周期</a></li>
+<li><a href="routing.htm" tppabs="http://laravel-china.org/docs/routing">路由 Routing</a></li>
+<li><a href="requests.htm" tppabs="http://laravel-china.org/docs/requests">处理用户请求和输入</a></li>
+<li><a href="responses.htm" tppabs="http://laravel-china.org/docs/responses">视图和响应</a></li>
+<li><a href="controllers.htm" tppabs="http://laravel-china.org/docs/controllers">控制器</a></li>
+<li><a href="errors.htm" tppabs="http://laravel-china.org/docs/errors">错误和日志</a></li>
+</ul></li>
+<li>更多 Laravel 知识
+
+<ul>
+<li><a href="security.htm" tppabs="http://laravel-china.org/docs/security">身份认证功能</a></li>
+<li><a href="billing.htm" tppabs="http://laravel-china.org/docs/billing">收费系统</a></li>
+<li><a href="cache.htm" tppabs="http://laravel-china.org/docs/cache">缓存</a></li>
+<li><a href="extending.htm" tppabs="http://laravel-china.org/docs/extending">扩展框架</a></li>
+<li><a href="events.htm" tppabs="http://laravel-china.org/docs/events">事件</a></li>
+<li><a href="facades.htm" tppabs="http://laravel-china.org/docs/facades">Facades</a></li>
+<li><a href="html.htm" tppabs="http://laravel-china.org/docs/html">表单和HTML</a></li>
+<li><a href="helpers.htm" tppabs="http://laravel-china.org/docs/helpers">帮助函数</a></li>
+<li><a href="ioc.htm" tppabs="http://laravel-china.org/docs/ioc">IoC Container</a></li>
+<li><a href="localization.htm" tppabs="http://laravel-china.org/docs/localization">本地化</a></li>
+<li><a href="mail.htm" tppabs="http://laravel-china.org/docs/mail">邮件发送 Mail</a></li>
+<li><a href="packages.htm" tppabs="http://laravel-china.org/docs/packages">扩展包开发</a></li>
+<li><a href="pagination.htm" tppabs="http://laravel-china.org/docs/pagination">分页功能</a></li>
+<li><a href="queues.htm" tppabs="http://laravel-china.org/docs/queues">队列</a></li>
+<li><a href="security.htm" tppabs="http://laravel-china.org/docs/security">安全</a></li>
+<li><a href="session.htm" tppabs="http://laravel-china.org/docs/session">会话</a></li>
+<li><a href="ssh.htm" tppabs="http://laravel-china.org/docs/ssh">远程连接模块 SSH</a></li>
+<li><a href="templates.htm" tppabs="http://laravel-china.org/docs/templates">模版引擎</a></li>
+<li><a href="testing.htm" tppabs="http://laravel-china.org/docs/testing">单元测试</a></li>
+<li><a href="validation.htm" tppabs="http://laravel-china.org/docs/validation">表单验证</a></li>
+</ul></li>
+<li>数据库 Database
+
+<ul>
+<li><a href="database.htm" tppabs="http://laravel-china.org/docs/database">数据库简单使用</a></li>
+<li><a href="queries.htm" tppabs="http://laravel-china.org/docs/queries">查询构造器</a></li>
+<li><a href="eloquent.htm" tppabs="http://laravel-china.org/docs/eloquent">Eloquent ORM</a></li>
+<li><a href="schema.htm" tppabs="http://laravel-china.org/docs/schema">表结构构造器</a></li>
+<li><a href="migrations.htm" tppabs="http://laravel-china.org/docs/migrations">Migrations &amp; Seeding</a></li>
+<li><a href="redis.htm" tppabs="http://laravel-china.org/docs/redis">Redis</a></li>
+</ul></li>
+<li>命令行 Artisan CLI
+
+<ul>
+<li><a href="artisan.htm" tppabs="http://laravel-china.org/docs/artisan">命令行 Artisan 介绍</a></li>
+<li><a href="commands.htm" tppabs="http://laravel-china.org/docs/commands">开发 Artisan 命令</a></li>
+</ul></li>
+</ul>
+            </nav>
+
+            <div id="docs-content">
+                <h1>Laravel 快速入门</h1>
+
+<ul>
+<li><a href="#installation">安装</a></li>
+<li><a href="#local-development-environment">本地开发环境</a></li>
+<li><a href="#routing">路由</a></li>
+<li><a href="#creating-a-view">建立视图</a></li>
+<li><a href="#creating-a-migration">建立迁移数据</a></li>
+<li><a href="#eloquent-orm">Eloquent ORM</a></li>
+<li><a href="#displaying-data">显示数据</a></li>
+<li><a href="#deploying-your-application">部署应用</a></li>
+</ul>
+
+<p><a name="installation"></a></p>
+
+<h2>安装</h2>
+
+<h3>通过 Laravel 安装器</h3>
+
+<p>首先, 使用 <code>Composer</code> 全局下载并安装 <code>Laravel/installer</code>:</p>
+
+<pre><code>composer global require "laravel/installer=~1.1"
+</code></pre>
+
+<p>请确定把 <code>~/.composer/vendor/bin</code> 路径放置于您的 <code>PATH</code> 里, 这样<code>laravel</code> 可执行文件才能被命令行找到,  以后您就可以在命令行下直接使用 <code>laravel</code> 命令.</p>
+
+<p>安装并且配置成功后, 可以使用命令 <code>laravel new</code> 在您指定的目录下创建一份全新安装的 <code>Laravel 应用</code>, 如这样的调用: <code>laravel new blog</code> 将会在当前目录下创建一个叫 <code>blog</code> 的目录, 此目录里面存放着全新安装的 Laravel 应用, 此方法跟其他方法不一样的地方在于是提前安装好所有代码依赖的, 您无需再通过 <code>composer install</code> 安装, 速度一下子提高了很多.</p>
+
+<h3>通过 Composer</h3>
+
+<p>Laravel 框架使用 <a href="javascript:if(confirm('http://getcomposer.org/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://getcomposer.org/'" tppabs="http://getcomposer.org/">composer</a> 来执行安装及管理依赖。如果还没有安装它的话，请先从 <a href="javascript:if(confirm('http://getcomposer.org/doc/00-intro.md  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://getcomposer.org/doc/00-intro.md'" tppabs="http://getcomposer.org/doc/00-intro.md">安装 Composer</a> 开始吧。</p>
+
+<p>安装之后，您可以通过终端执行下列命令来安装 Laravel：</p>
+
+<pre><code>composer create-project laravel/laravel your-project-name --prefer-dist
+</code></pre>
+
+<p>这个命令会下载并安装一份全新的 Laravel 存放在指定的 <code>your-project-name</code> 的目录中。</p>
+
+<h3>手动安装</h3>
+
+<p>手动安装 Laravel, 可以直接从 <a href="javascript:if(confirm('https://github.com/laravel/laravel/archive/master.zip  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://github.com/laravel/laravel/archive/master.zip'" tppabs="https://github.com/laravel/laravel/archive/master.zip">Github 上的 Laravel Respoitory</a> 下载一份打包的代码, 解压缩, 然后在解压后的根目录里，执行 <code>composer install</code> 即可，这个命令会把框架所需要的依赖下载完整。</p>
+
+<h3>权限配置</h3>
+
+<p>在安装 Laravel 之后，确保 Web 服务器有写入 <code>app/storage</code> 目录的权限。详情请见<a href="installation.htm" tppabs="http://laravel-china.org/docs/installation">安装</a>文档说明。</p>
+
+<h3>运行 Laravel</h3>
+
+<p>一般而言，您需要一个 Web 服务器（比如: Apache 或是 Nginx）来运行您的 Laravel 应用。如果您是使用 PHP 5.4 以上版本，为了方便, 可以使用 PHP 内建的开发服务器，只需要通过使用 Laravel 的 Artisan 命令 来执行 <code>serve</code> 即可：</p>
+
+<pre><code>php artisan serve
+</code></pre>
+
+<p><a name="directories"></a></p>
+
+<h3>目录结构</h3>
+
+<p>安装完框架后，我们来了解熟悉一下项目的目录结构。<code>app</code> 目录里面包含了 <code>views（视图）</code>, <code>controllers（控制器）</code>, 还有 <code>models（模型）</code> 等目录。您的应用程序大多数的代码都会在这个目录中, 需要注意的还有存放相关配置文件的目录 <code>app/config</code> 。</p>
+
+<p><a name="local-development-environment"></a></p>
+
+<h2>本地开发环境</h2>
+
+<p>过去要在本机上配置一个本地的 PHP 开发环境是非常让人头痛的事情。除了要安装正确的 PHP 版本、对应的扩展包，还有一些所需的组件，都是一个大工程。很多情况下因为这些繁琐的配置问题，导致我们直接放弃了尝试要做的事， 非常的可惜。</p>
+
+<p>为了解决这状况，使用 <a href="homestead.htm" tppabs="http://laravel-china.org/docs/homestead">Laravel Homestead</a> 吧。Homestead 是由 Laravel 和 <a href="javascript:if(confirm('http://vagrantup.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://vagrantup.com/'" tppabs="http://vagrantup.com/">Vagrant</a> 所设计的虚拟机。而 Homestead Vagrant 里封装了建立一个完整 PHP 应用所需的所有软件。因此可以在瞬间创建一个虚拟化的、独立不受干扰的开发环境。特别适用于团队开发环境的统一。 下面列出包装在 Homestead 里的软件：</p>
+
+<ul>
+<li>Nginx</li>
+<li>PHP 5.5</li>
+<li>MySQL</li>
+<li>Redis</li>
+<li>Memcached</li>
+<li>Beanstalk</li>
+</ul>
+
+<p>Homestead 依赖于 VirtualBox 和 Vagrant ， 所以您需要先安装他们。两个软件都有各平台的图形化安装界面。请参阅 <a href="homestead.htm" tppabs="http://laravel-china.org/docs/homestead">Homestead 说明</a> 进行了解。</p>
+
+<p>Laravel 的社区特别推荐使用 Homestead 来开发应用, 主要有以下优势:</p>
+
+<ol>
+<li>安装部署简单, 快速使用, 并支持各种主流系统;</li>
+<li>统一开发环境, 避免了团队开发时, 各种 <code>运行系统</code>, <code>软件发行版本</code>, <code>软件配置</code> 的不一致所带来不必要的复杂性;</li>
+<li>能使开发环境最大程度上跟线上生产环境一致;</li>
+</ol>
+
+<p><a name="routing"></a></p>
+
+<h2>路由</h2>
+
+<p>首先，我们先创建第一个路由。在 Laravel 中，最简单的路由是通过匿名函数来实现的。打开 <code>app/routes.php</code> 文件，在文件的最下方添加如下代码：</p>
+
+<pre><code>Route::get('users', function()
+{
+    return 'Users!';
+});
+</code></pre>
+
+<p>现在，在浏览器中输入 <code>/users</code>，您应该会看到页面出现 <code>Users!</code>。简单吧, 您已经建立了第一个路由。</p>
+
+<p>路由也可以指向一个控制器类和动作方法。例如：</p>
+
+<pre><code>Route::get('users', 'UserController@getIndex');
+</code></pre>
+
+<p>以上代码声明 <code>/users</code> 路由的请求应该使用 <code>UserController</code> 类的 <code>getIndex</code> 方法。查看更多关于控制器路由的信息，请查阅<a href="controllers.htm" tppabs="http://laravel-china.org/docs/controllers">控制器</a>。</p>
+
+<p><a name="creating-a-view"></a></p>
+
+<h2>建立视图</h2>
+
+<p>接下来，我们要创建视图来显示我们的用户数据。视图以 HTML 代码存放在 <code>app/views</code> 的目录中, 后缀名一般为 <code>.blade.php</code>。我们先来创建两个视图文件： <code>layout.blade.php</code> 和 <code>user.blade.php</code>。首先，我们建立<code>layout.blade.php</code> 文件：</p>
+
+<pre><code>&lt;html&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Laravel Quickstart&lt;/h1&gt;
+
+        @yield('content')
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>接下来，我们建立 <code>users.blade.php</code> 文件：</p>
+
+<pre><code>@extends('layout')
+
+@section('content')
+    Users!
+@stop
+</code></pre>
+
+<p>这里有些语法或许让您感到陌生。因为我们使用的是 Laravel 的模板系统：Blade。Blade 非常快，仅需要通过少量的正则表示式来把模板文件编译成 PHP 代码。Blade 提供了强大的功能，例如模板的继承，还有一些常用的 PHP 控制结构语法，如 <code>if</code> 和 <code>for</code>。更多信息请查阅 <a href="templates.htm" tppabs="http://laravel-china.org/docs/templates">Blade</a>。</p>
+
+<p>现在，我们已经有了自己的视图，让我们回到 <code>/users</code> 路由。我们改用视图来替代直接输出的 <code>Users!</code>：</p>
+
+<pre><code>Route::get('users', function()
+{
+    return View::make('users');
+});
+</code></pre>
+
+<p>太棒了！现在您已经成功地建立了一个继承自 layout 的简单视图。接下来，我们来学习一下数据库层。</p>
+
+<p><a name="creating-a-migration"></a></p>
+
+<h2>建立迁移文件</h2>
+
+<p>我们使用 Laravel 的迁移 (migration) 系统来建立数据库表以保存我们的数据。迁移记录着数据库的改变历史，可以通过版本控制的方式来更好的让团队开发保持一致性。</p>
+
+<p>首先，我们要配置数据库连接。您可以在 <code>app/config/database.php</code> 文件中配置所有的数据库连接信息。Laravel 默认使用 MySQL，所以您必须将相关的数据库连接信息填入其中。您也可以更改 <code>driver</code> 选项为 <code>sqlite</code>，如此 Laravel 就会使用放置在 <code>app/database</code> 里的 SQLite 数据库。</p>
+
+<p>接下来，我们来创建迁移文件，我们使用 <a href="artisan.htm" tppabs="http://laravel-china.org/docs/artisan">Artisan CLI</a>来创建。在项目的根目录下，通过终端执行下列命令：</p>
+
+<pre><code>php artisan migrate:make create_users_table
+</code></pre>
+
+<p>然后，在 <code>app/database/migrations</code> 目录下就会产生对应的迁移文件。文件中会有一个包含了两个方法 <code>up</code> 和 <code>down</code> 的类。在 <code>up</code> 方法中，您必须写上您要对您的数据库表做哪些更动，而在 <code>down</code> 的方法里，您只要写上对应的回滚代码。</p>
+
+<p>我们定义一个迁移文件如下：</p>
+
+<pre><code>public function up()
+{
+    Schema::create('users', function($table)
+    {
+        $table-&gt;increments('id');
+        $table-&gt;string('email')-&gt;unique();
+        $table-&gt;string('name');
+        $table-&gt;timestamps();
+    });
+}
+
+public function down()
+{
+    Schema::drop('users');
+}
+</code></pre>
+
+<p>然后继续在项目的根目录下，通过终端执行 <code>migrate</code> 命令来执行迁移动作。</p>
+
+<pre><code>php artisan migrate
+</code></pre>
+
+<p>如果您想回滚迁移，您可以执行以下命令</p>
+
+<pre><code>php artisan migrate:rollback
+</code></pre>
+
+<p>现在我们已经建好了数据库表了，开始放些数据进去吧。</p>
+
+<p><a name="eloquent-orm"></a></p>
+
+<h2>Eloquent ORM</h2>
+
+<p>Laravel 提供了很棒的 ORM：Eloquent。如果您曾经使用过 Ruby on Rails 框架，那您将会觉得 Eloquent 很熟悉，因为它遵循着 ActiveRecord ORM 风格的数据库互动模式。</p>
+
+<p>首先，我们先来定义一个模型 (model)。一个 Eloquent 模型可以用来查询关联的数据库表，以及表内的某一行。模型通常存放在 <code>app/models</code> 目录中。让我们先来在这目录里创建一个 <code>User.php</code> 的模型文件：</p>
+
+<pre><code>class User extends Eloquent {}
+</code></pre>
+
+<p>注意，我们并未告诉 Eloquent 使用哪个表。Eloquent 有多种惯例，一种就是使用模型的复数形态作为该模型的数据库表名称，非常方便, 这是 Laravel 的开发规范。</p>
+
+<p>使用您喜欢的数据库管理工具，插入几条数据到 <code>users</code> 数据库表，我们将使用 Eloquent 来取得这些数据并且传递到视图中去。</p>
+
+<p>现在我们修改我们的 <code>/users</code> 路由如下：</p>
+
+<pre><code>Route::get('users', function()
+{
+    $users = User::all();
+
+    return View::make('users')-&gt;with('users', $users);
+});
+</code></pre>
+
+<p>在以上代码中, 首先，<code>User</code> 模型里的 <code>all</code> 方法会取得 <code>users</code> 表里的所有记录。接下来，我们通过 <code>with</code> 方法将这些记录传递到视图中。<code>with</code> 方法接受一个键和与其对应的值，这样这对键值就可以在视图中使用了。</p>
+
+<p><a name="displaying-data"></a></p>
+
+<h2>显示数据</h2>
+
+<p>现在，通过 <code>view</code> 下的 <code>with</code> 方法, 视图中已经可以获取到 <code>users</code> 变量了，我们可以显示出来，如下：</p>
+
+<pre><code>@extends('layout')
+
+@section('content')
+    @foreach($users as $user)
+        &lt;p&gt;{{ $user-&gt;name }}&lt;/p&gt;
+    @endforeach
+@stop
+</code></pre>
+
+<p>您会发现没有看到任何 <code>echo</code> 语句。当使用 Blade 时，您可以使用两个大括号来输出数据。接下来, 通过访问 <code>/users</code> 路由, 就能看到用户数据了。</p>
+
+<p>这仅仅只是开始。在这个教程中，您已经了解了 Laravel 基础部分，但是还有更多令人兴奋的东西等着您学习。继续阅读文件且更深入的了解 <a href="eloquent.htm" tppabs="http://laravel-china.org/docs/eloquent">Eloquent</a> 和 <a href="templates.htm" tppabs="http://laravel-china.org/docs/templates">Blade</a> 的强大特性。或许，您也更有兴趣去了解 <a href="queues.htm" tppabs="http://laravel-china.org/docs/queues">队列</a> 和 <a href="testing.htm" tppabs="http://laravel-china.org/docs/testing">单元测试</a>。</p>
+
+<p><a name="deploying-your-application"></a></p>
+
+<h2>部署应用程序</h2>
+
+<p>Laravel 的其中一个目标就是让 PHP 应用程序开发从下载到部署都非常的轻松，而 <a href="javascript:if(confirm('https://forge.laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://forge.laravel.com/'" tppabs="https://forge.laravel.com/">Laravel Forge</a> 提供了一个简单的方式去部署您的 Laravel 应用到服务器上。Forge 可以配置并供应在 DigitalOcean、 Linode、Rackspace 和 Amazon EC2 上的机器群。如同 Homestead 一样，所有必须的最新版软件都已安装在内：Nginx、PHP 5.5、MySQL、Postgres、Redis、Memcached 等等。Forge 的 “快速部署” 可以让您在每次发布更新至 Github 或是 Bitbucket 时自动部署应用。</p>
+
+<p>更重要的是，Forge 能帮助您配置 queue workers、SSL、Cron jobs、子域名等等。更多的信息请参阅 <a href="javascript:if(confirm('https://forge.laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://forge.laravel.com/'" tppabs="https://forge.laravel.com/">Forge 网站</a>。</p>
+            </div>
+
+        </article>
+    </section>
+
+</div>
+
+<footer id="foot" class="textcenter">
+    <div class="boxed">
+
+        <nav id="secondary">
+            <div id="logo-foot">
+                <a href="javascript:if(confirm('http://laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/'" tppabs="http://laravel.com/"><img src="logo-foot.png" tppabs="http://laravel-china.qiniudn.com/assets/img/logo-foot.png" alt="Laravel"></a>
+            </div>
+            <ul>
+                <li><a href="javascript:if(confirm('http://laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/'" tppabs="http://laravel.com/"  target="_blank">官网</a></li>
+                <li><a href="javascript:if(confirm('https://forge.laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://forge.laravel.com/'" tppabs="https://forge.laravel.com/"  target="_blank">Hosting</a></li>
+                <li><a href="javascript:if(confirm('http://laravel.com/docs  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/docs'" tppabs="http://laravel.com/docs" title="Documentation"  target="_blank">英文文档</a></li>
+                <li><a href="javascript:if(confirm('http://github.com/laravel/laravel  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://github.com/laravel/laravel'" tppabs="http://github.com/laravel/laravel" title="Github"  target="_blank">Laravel at Github</a></li>
+                <li><a href="javascript:if(confirm('http://laravel.io/forum  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.io/forum'" tppabs="http://laravel.io/forum" title="Laravel Forums"  target="_blank">英文论坛</a></li>
+                <li><a href="javascript:if(confirm('http://twitter.com/laravelphp  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://twitter.com/laravelphp'" tppabs="http://twitter.com/laravelphp" title="Laravel on Twitter"  target="_blank">Twitter</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</footer>
+
+<div id="top">
+    <a href="#index" title="Back to the top">
+        <i class="icon-chevron-up"></i>
+    </a>
+</div>
+
+
+    </div>
+
+    <section id="copyright" class="textcenter">
+        <div class="boxed">
+            <div class="animated slideInLeft">
+                Laravel is a trademark of Taylor Otwell.<br class="br-mobile--footer">
+                Copyright &copy; <a href="javascript:if(confirm('http://twitter.com/taylorotwell  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://twitter.com/taylorotwell'" tppabs="http://twitter.com/taylorotwell" title="Taylor Otwell" target="_blank">Taylor Otwell</a>.<br class="br-mobile--footer">
+                Website built with &hearts; <a href="javascript:if(confirm('http://ikreativ.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://ikreativ.com/'" tppabs="http://ikreativ.com/" title="iKreativ" target="_blank">iKreativ</a>;<br class="br-mobile--footer">
+                responsive by <a href="javascript:if(confirm('http://tighten.co/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://tighten.co/'" tppabs="http://tighten.co/" title="Tighten Co." target="_blank">Tighten Co.</a>
+            </div>
+        </div>
+    </section>
+
+	<script src="bundle.js" tppabs="http://laravel-china.qiniudn.com/assets/js/bundle.js"></script>
+    
+    
+
+</body>
+</html>

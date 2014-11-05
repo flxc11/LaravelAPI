@@ -1,0 +1,517 @@
+<html><!doctype html>
+
+<html lang="en">
+
+<head>
+    <title>Laravel 中文文档</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+    <meta name="author" content="Laravel 中国">
+    <meta name="description" content="Laravel 中文文档, 致力于推动 Laravel, php-fig 等国外 PHP 新技术, 新理念在中国的发展.">
+    <meta name="keywords" content="laravel中国,laravel中文, laravel框架中文, laravel框架中国, php, framework, web, artisans, taylor otwell">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="favicon.png" tppabs="http://laravel-china.qiniudn.com/favicon.png">
+
+    <link href="styles.css" tppabs="http://laravel-china.qiniudn.com/assets/css/styles.css" rel="stylesheet">
+
+    <!--[if IE]><link href="http://laravel-china.qiniudn.com/assets/css/ie.css" rel="stylesheet" type="text/css"><![endif]-->
+
+    <!-- HTML5 elements in less than IE9, yes please! -->
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <!-- If less than IE8 add some JS for the webfont icons -->
+    <!--[if lt IE 8]><script src="http://laravel-china.qiniudn.com/assets/js/ie_font.js"></script><![endif]-->
+
+        
+    
+    <style>
+#documentation nav#docs ul li ul li a {
+font-weight: 600;
+font-size: 13px;
+}
+nav#primary.fixed {
+opacity: .9;
+ position: inherit; 
+top: 0;
+}
+
+p {
+font-size: inherit;
+line-height: 1.4em;
+margin: 0 0 .8em;
+}
+html, body {
+height: 100%;
+font-size: 14px;
+color: #333333;
+font-family: "Heiti SC Light", "Helvetica Neue", Verdana, 微软雅黑, Arial, sans-serif;
+background: #e5e5e5;
+}
+#documentation nav#docs {
+    width: 250px;
+}
+code, kbd, pre, samp {
+    font-size: inherit;
+}
+code {
+background: #F1F1F1;
+color: #f4645f;
+padding: 0 5px;
+border-radius: 3px;
+}
+p {
+line-height: 1.8em;
+}
+#documentation nav#docs {
+width: 170px;
+}
+
+@media only screen and (min-width: 1024px) {
+#documentation #docs-content {
+display: block;
+float: right;
+padding-left: 35px;
+padding-right: 35px;
+width: 830px;
+}
+}
+
+.primary-nav-ul li a {
+border-bottom: 0;
+font-size: 14px;
+padding: 0 0 0 25px;
+width: auto;
+}
+.prettyprint code {
+font-family: Monaco,Consolas,"Lucida Console",monospace;
+font-size: 13px;
+}
+    </style>
+</head>
+
+<body id="index" class="page">
+
+    <!--[if lt IE 7]>
+        <p>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
+    <![endif]-->
+
+    <div id="wrapper">
+
+    <header id="header" role="header">
+    <div class="boxed">
+        <div id="tagline">
+            <h1><a href="index.htm" tppabs="http://laravel-china.org/" style="color:white; font-wight:bold;">Laravel China</a></h1>
+        </div>
+
+        <div id="version">
+            <ul class="nolist">
+                                    <li class="current">
+                        <a href="docs.htm" tppabs="http://laravel-china.org/docs/4-2" title="4.2">4.2</a>
+                    </li>
+                            </ul>
+        </div>
+    </div>
+</header>
+
+<nav id="primary">
+    <div class="boxed">
+        <div id="logo-head">
+            <a href="index.htm" tppabs="http://laravel-china.org/"><img src="logo-head.png" tppabs="http://laravel-china.qiniudn.com/assets/img/logo-head.png" alt="Laravel"></a>
+        </div>
+        <ul class="primary-nav-ul">
+            <li class="current-item"><a href="docs.htm" tppabs="http://laravel-china.org/docs/docs" title="Documentation">文档</a></li>
+            <li><a href="javascript:if(confirm('http://phphub.org/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://phphub.org/'" tppabs="http://phphub.org/" title="PHPhub"  target="_blank">论坛</a></li>
+            <li><a href="javascript:if(confirm('https://github.com/laravel-china/docs  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://github.com/laravel-china/docs'" tppabs="https://github.com/laravel-china/docs"  target="_blank">纠错</a></li>
+            <li><a href="javascript:if(confirm('http://laravel.com/api/4.2/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/api/4.2/'" tppabs="http://laravel.com/api/4.2/" title="Laravel Framework API"  target="_blank">API</a></li>
+        </ul>
+        <a href="#" class="show-primary-nav">菜单</a>
+    </div>
+</nav>
+
+<div id="content">
+
+    <section id="documentation">
+        <article class="boxed">
+
+            <ul class="version-picker--mobile nolist">
+                                <li class="current">
+                    <a href="docs.htm" tppabs="http://laravel-china.org/docs/4-2" title="4.2">4.2</a>
+                </li>
+                            </ul>
+            <a href="#" class="docs-show" data-show-text="Navigate" data-hide-text="Close">Navigate</a>
+
+            <nav id="docs">
+                <ul>
+<li>前言
+
+<ul>
+<li><a href="introduction.htm" tppabs="http://laravel-china.org/docs/introduction">Laravel 介绍</a></li>
+<li><a href="quick.htm" tppabs="http://laravel-china.org/docs/quick">快速入门</a></li>
+<li><a href="releases.htm" tppabs="http://laravel-china.org/docs/releases">框架更新记录</a></li>
+<li><a href="upgrade.htm" tppabs="http://laravel-china.org/docs/upgrade">升级指南</a></li>
+</ul></li>
+<li>快速上手
+
+<ul>
+<li><a href="installation.htm" tppabs="http://laravel-china.org/docs/installation">安装文档</a></li>
+<li><a href="configuration.htm" tppabs="http://laravel-china.org/docs/configuration">配置信息</a></li>
+<li><a href="homestead.htm" tppabs="http://laravel-china.org/docs/homestead">Homestead</a></li>
+<li><a href="lifecycle.htm" tppabs="http://laravel-china.org/docs/lifecycle">程序的生命周期</a></li>
+<li><a href="routing.htm" tppabs="http://laravel-china.org/docs/routing">路由 Routing</a></li>
+<li><a href="requests.htm" tppabs="http://laravel-china.org/docs/requests">处理用户请求和输入</a></li>
+<li><a href="responses.htm" tppabs="http://laravel-china.org/docs/responses">视图和响应</a></li>
+<li><a href="controllers.htm" tppabs="http://laravel-china.org/docs/controllers">控制器</a></li>
+<li><a href="errors.htm" tppabs="http://laravel-china.org/docs/errors">错误和日志</a></li>
+</ul></li>
+<li>更多 Laravel 知识
+
+<ul>
+<li><a href="security.htm" tppabs="http://laravel-china.org/docs/security">身份认证功能</a></li>
+<li><a href="billing.htm" tppabs="http://laravel-china.org/docs/billing">收费系统</a></li>
+<li><a href="cache.htm" tppabs="http://laravel-china.org/docs/cache">缓存</a></li>
+<li><a href="extending.htm" tppabs="http://laravel-china.org/docs/extending">扩展框架</a></li>
+<li><a href="events.htm" tppabs="http://laravel-china.org/docs/events">事件</a></li>
+<li><a href="facades.htm" tppabs="http://laravel-china.org/docs/facades">Facades</a></li>
+<li><a href="html.htm" tppabs="http://laravel-china.org/docs/html">表单和HTML</a></li>
+<li><a href="helpers.htm" tppabs="http://laravel-china.org/docs/helpers">帮助函数</a></li>
+<li><a href="ioc.htm" tppabs="http://laravel-china.org/docs/ioc">IoC Container</a></li>
+<li><a href="localization.htm" tppabs="http://laravel-china.org/docs/localization">本地化</a></li>
+<li><a href="mail.htm" tppabs="http://laravel-china.org/docs/mail">邮件发送 Mail</a></li>
+<li><a href="packages.htm" tppabs="http://laravel-china.org/docs/packages">扩展包开发</a></li>
+<li><a href="pagination.htm" tppabs="http://laravel-china.org/docs/pagination">分页功能</a></li>
+<li><a href="queues.htm" tppabs="http://laravel-china.org/docs/queues">队列</a></li>
+<li><a href="security.htm" tppabs="http://laravel-china.org/docs/security">安全</a></li>
+<li><a href="session.htm" tppabs="http://laravel-china.org/docs/session">会话</a></li>
+<li><a href="ssh.htm" tppabs="http://laravel-china.org/docs/ssh">远程连接模块 SSH</a></li>
+<li><a href="templates.htm" tppabs="http://laravel-china.org/docs/templates">模版引擎</a></li>
+<li><a href="testing.htm" tppabs="http://laravel-china.org/docs/testing">单元测试</a></li>
+<li><a href="validation.htm" tppabs="http://laravel-china.org/docs/validation">表单验证</a></li>
+</ul></li>
+<li>数据库 Database
+
+<ul>
+<li><a href="database.htm" tppabs="http://laravel-china.org/docs/database">数据库简单使用</a></li>
+<li><a href="queries.htm" tppabs="http://laravel-china.org/docs/queries">查询构造器</a></li>
+<li><a href="eloquent.htm" tppabs="http://laravel-china.org/docs/eloquent">Eloquent ORM</a></li>
+<li><a href="schema.htm" tppabs="http://laravel-china.org/docs/schema">表结构构造器</a></li>
+<li><a href="migrations.htm" tppabs="http://laravel-china.org/docs/migrations">Migrations &amp; Seeding</a></li>
+<li><a href="redis.htm" tppabs="http://laravel-china.org/docs/redis">Redis</a></li>
+</ul></li>
+<li>命令行 Artisan CLI
+
+<ul>
+<li><a href="artisan.htm" tppabs="http://laravel-china.org/docs/artisan">命令行 Artisan 介绍</a></li>
+<li><a href="commands.htm" tppabs="http://laravel-china.org/docs/commands">开发 Artisan 命令</a></li>
+</ul></li>
+</ul>
+            </nav>
+
+            <div id="docs-content">
+                <h1>单元测试</h1>
+
+<ul>
+<li><a href="#introduction">介绍</a></li>
+<li><a href="#defining-and-running-tests">定义并执行测试</a></li>
+<li><a href="#test-environment">测试环境</a></li>
+<li><a href="#calling-routes-from-tests">在测试中调用路由</a></li>
+<li><a href="#mocking-facades">模拟 Facades</a></li>
+<li><a href="#framework-assertions">框架 Assertions</a></li>
+<li><a href="#helper-methods">辅助方法</a></li>
+<li><a href="#refreshing-the-application">重置应用程序</a></li>
+</ul>
+
+<p><a name="introduction"></a></p>
+
+<h2>介绍</h2>
+
+<p>Laravel 在创立时就有考虑到单元测试。事实上，它能立即使用被引入的 PHPUnit 做测试，而且默认已经为您的应用程序建立了 <code>phpunit.xml</code> 文件。 除了 PHPUnit 以外，Laravel 也利用 Symfony HttpKernel、 DomCrawler 和 BrowserKit 组件让您在测试的时候模拟一个网页浏览器来检查和处理您的视图。</p>
+
+<p>在 <code>app/tests</code> 文件夹中有提供一个测试例子。在安装好新的 Laravel 应用程序之后，只要在命令行上执行 <code>phpunit</code> 来进行测试流程。</p>
+
+<p><a name="defining-and-running-tests"></a></p>
+
+<h2>定义并执行测试</h2>
+
+<p>要建立一个测试案例，只要在 <code>app/tests</code> 文件夹建立新的测试文件。测试类必须继承自 <code>TestCase</code>，接着您可以如平常使用 PHPUnit 一般去定义测试方法。</p>
+
+<h4>测试类例子</h4>
+
+<pre><code>class FooTest extends TestCase {
+
+    public function testSomethingIsTrue()
+    {
+        $this-&gt;assertTrue(true);
+    }
+
+}
+</code></pre>
+
+<p>您可以从命令行执行 <code>phpunit</code> 命令来执行应用程序的所有测试。</p>
+
+<blockquote>
+  <p><strong>注意:</strong> 如果您定义自己的 <code>setUp</code> 方法， 请记得调用 <code>parent::setUp</code>。</p>
+</blockquote>
+
+<p><a name="test-environment"></a></p>
+
+<h2>测试环境</h2>
+
+<p>当执行单元测试的时候，Laravel 会自动将环境设置在 <code>testing</code> 中。另外 Laravel 会在测试环境中加载 <code>session</code> 和 <code>cache</code> 的配置文件，在测试环境中这两个驱动会被设定为 <code>array</code> (空数组)，表示在测试的时候不对 session 或 cache 数据进行持久化操作。必要时你也可以创建其他的测试环境。</p>
+
+<p><a name="calling-routes-from-tests"></a></p>
+
+<h2>在测试中调用路由</h2>
+
+<h4>从单一测试中调用路由</h4>
+
+<p>您可以使用 <code>call</code> 方法方便地调用您的其中一个路由来进行测试:</p>
+
+<pre><code>$response = $this-&gt;call('GET', 'user/profile');
+
+$response = $this-&gt;call($method, $uri, $parameters, $files, $server, $content);
+</code></pre>
+
+<p>接着您可以检查 <code>Illuminate\Http\Response</code> 对象:</p>
+
+<pre><code>$this-&gt;assertEquals('Hello World', $response-&gt;getContent());
+</code></pre>
+
+<h4>在测试中调用控制器</h4>
+
+<p>您也可以在测试中调用控制器 :</p>
+
+<pre><code>$response = $this-&gt;action('GET', 'HomeController@index');
+
+$response = $this-&gt;action('GET', 'UserController@profile', array('user' =&gt; 1));
+</code></pre>
+
+<p><code>getContent</code> 方法会回传求值后的字符串内容. 如果您的路由回传一个 <code>View</code>, 您可以通过 <code>original</code> 属性获取它:</p>
+
+<pre><code>$view = $response-&gt;original;
+
+$this-&gt;assertEquals('John', $view['name']);
+</code></pre>
+
+<p>您可以使用 <code>callSecure</code> 方法去调用 HTTPS 路由:</p>
+
+<pre><code>$response = $this-&gt;callSecure('GET', 'foo/bar');
+</code></pre>
+
+<blockquote>
+  <p><strong>注意:</strong> 在测试环境中， 路由过滤器是被禁用的。如果要启用它们，必须增加 <code>Route::enableFilters()</code> 到您的测试中。</p>
+</blockquote>
+
+<h3>DOM Crawler</h3>
+
+<p>您也可以通过调用路由来取得 DOM Crawler 实例来检查内容：</p>
+
+<pre><code>$crawler = $this-&gt;client-&gt;request('GET', '/');
+
+$this-&gt;assertTrue($this-&gt;client-&gt;getResponse()-&gt;isOk());
+
+$this-&gt;assertCount(1, $crawler-&gt;filter('h1:contains("Hello World!")'));
+</code></pre>
+
+<p>如需更多如何使用 DOM Crawler 的信息，请参考它的<a href="javascript:if(confirm('http://symfony.com/doc/master/components/dom_crawler.html  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://symfony.com/doc/master/components/dom_crawler.html'" tppabs="http://symfony.com/doc/master/components/dom_crawler.html">官方文件</a>.</p>
+
+<p><a name="mocking-facades"></a></p>
+
+<h2>模拟 Facades</h2>
+
+<p>当测试的时候，您或许常会想要模拟调用 Laravel 静态 facade。举个例子，参考下面的控制器行为:</p>
+
+<pre><code>public function getIndex()
+{
+    Event::fire('foo', array('name' =&gt; 'Dayle'));
+
+    return 'All done!';
+}
+</code></pre>
+
+<p>我们可以在 facade 上使用 <code>shouldReceive</code> 方法，模拟调用 <code>Event</code> 类，它将会回传一个 <a href="javascript:if(confirm('https://github.com/padraic/mockery  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://github.com/padraic/mockery'" tppabs="https://github.com/padraic/mockery">Mockery</a> mock 对象实例。</p>
+
+<h4>模拟 Facade</h4>
+
+<pre><code>public function testGetIndex()
+{
+    Event::shouldReceive('fire')-&gt;once()-&gt;with('foo', array('name' =&gt; 'Dayle'));
+
+    $this-&gt;call('GET', '/');
+}
+</code></pre>
+
+<blockquote>
+  <p><strong>注意:</strong> 您不应该模拟 <code>Request</code> facade。当执行您的测试，应该传递想要的输入数据给 <code>call</code> 方法。</p>
+</blockquote>
+
+<p><a name="framework-assertions"></a></p>
+
+<h2>框架 Assertions</h2>
+
+<p>Laravel 附带几个 <code>assert</code> 方法，能让测试更简单一点:</p>
+
+<h4>Assert 回应为 OK</h4>
+
+<pre><code>public function testMethod()
+{
+    $this-&gt;call('GET', '/');
+
+    $this-&gt;assertResponseOk();
+}
+</code></pre>
+
+<h4>Assert 回应状态码</h4>
+
+<pre><code>$this-&gt;assertResponseStatus(403);
+</code></pre>
+
+<h4>Assert 回应为重定向</h4>
+
+<pre><code>$this-&gt;assertRedirectedTo('foo');
+
+$this-&gt;assertRedirectedToRoute('route.name');
+
+$this-&gt;assertRedirectedToAction('Controller@method');
+</code></pre>
+
+<h4>Assert 回应带数据的视图</h4>
+
+<pre><code>public function testMethod()
+{
+    $this-&gt;call('GET', '/');
+
+    $this-&gt;assertViewHas('name');
+    $this-&gt;assertViewHas('age', $value);
+}
+</code></pre>
+
+<h4>Assert 回应带数据的 Session</h4>
+
+<pre><code>public function testMethod()
+{
+    $this-&gt;call('GET', '/');
+
+    $this-&gt;assertSessionHas('name');
+    $this-&gt;assertSessionHas('age', $value);
+}
+</code></pre>
+
+<h4>Assert 回应带错误信息的 Session</h4>
+
+<pre><code>public function testMethod()
+{
+    $this-&gt;call('GET', '/');
+
+    $this-&gt;assertSessionHasErrors();
+
+    // Asserting the session has errors for a given key...
+    $this-&gt;assertSessionHasErrors('name');
+
+    // Asserting the session has errors for several keys...
+    $this-&gt;assertSessionHasErrors(array('name', 'age'));
+}
+</code></pre>
+
+<h4>Assert 回应带数据的旧输入内容</h4>
+
+<pre><code>public function testMethod()
+{
+    $this-&gt;call('GET', '/');
+
+    $this-&gt;assertHasOldInput();
+}
+</code></pre>
+
+<p><a name="helper-methods"></a></p>
+
+<h2>辅助方法</h2>
+
+<p><code>TestCase</code> 类包含几个辅助方法让应用程序的测试更为简单。</p>
+
+<h4>从测试里设定和刷新 Sessions</h4>
+
+<pre><code>$this-&gt;session(['foo' =&gt; 'bar']);
+
+$this-&gt;flushSession();
+</code></pre>
+
+<h4>设定目前经过验证的用户</h4>
+
+<p>您可以使用 <code>be</code> 方法设定目前经过验证的用户:</p>
+
+<pre><code>$user = new User(array('name' =&gt; 'John'));
+
+$this-&gt;be($user);
+</code></pre>
+
+<p>您可以从测试中使用 <code>seed</code> 方法重新填充您的数据库:</p>
+
+<h4>从测试中重新填充数据库</h4>
+
+<pre><code>$this-&gt;seed();
+
+$this-&gt;seed($connection);
+</code></pre>
+
+<p>更多建立填充数据的信息可以在文件的 <a href="migrations.htm#database-seeding" tppabs="http://laravel-china.org/docs/migrations#database-seeding">迁移与数据填充</a> 部分找到。</p>
+
+<p><a name="refreshing-the-application"></a></p>
+
+<h2>重置应用程序</h2>
+
+<p>您可能已经知道，您可以通过 <code>$this-&gt;app</code> 在任何测试方法中获取您的 Laravel <code>应用程序本体</code> / IoC 容器。这个应用程序对象实例会在每个测试类里被重置。如果您希望在给定的方法中手动强制重置应用程序，则可以在测试方法使用 <code>refreshApplication</code> 方法。 这将会重置任何额外的绑定， 例如那些从测试案例执行开始被放到 IoC 容器的 mocks。</p>
+            </div>
+
+        </article>
+    </section>
+
+</div>
+
+<footer id="foot" class="textcenter">
+    <div class="boxed">
+
+        <nav id="secondary">
+            <div id="logo-foot">
+                <a href="javascript:if(confirm('http://laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/'" tppabs="http://laravel.com/"><img src="logo-foot.png" tppabs="http://laravel-china.qiniudn.com/assets/img/logo-foot.png" alt="Laravel"></a>
+            </div>
+            <ul>
+                <li><a href="javascript:if(confirm('http://laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/'" tppabs="http://laravel.com/"  target="_blank">官网</a></li>
+                <li><a href="javascript:if(confirm('https://forge.laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://forge.laravel.com/'" tppabs="https://forge.laravel.com/"  target="_blank">Hosting</a></li>
+                <li><a href="javascript:if(confirm('http://laravel.com/docs  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/docs'" tppabs="http://laravel.com/docs" title="Documentation"  target="_blank">英文文档</a></li>
+                <li><a href="javascript:if(confirm('http://github.com/laravel/laravel  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://github.com/laravel/laravel'" tppabs="http://github.com/laravel/laravel" title="Github"  target="_blank">Laravel at Github</a></li>
+                <li><a href="javascript:if(confirm('http://laravel.io/forum  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.io/forum'" tppabs="http://laravel.io/forum" title="Laravel Forums"  target="_blank">英文论坛</a></li>
+                <li><a href="javascript:if(confirm('http://twitter.com/laravelphp  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://twitter.com/laravelphp'" tppabs="http://twitter.com/laravelphp" title="Laravel on Twitter"  target="_blank">Twitter</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</footer>
+
+<div id="top">
+    <a href="#index" title="Back to the top">
+        <i class="icon-chevron-up"></i>
+    </a>
+</div>
+
+
+    </div>
+
+    <section id="copyright" class="textcenter">
+        <div class="boxed">
+            <div class="animated slideInLeft">
+                Laravel is a trademark of Taylor Otwell.<br class="br-mobile--footer">
+                Copyright &copy; <a href="javascript:if(confirm('http://twitter.com/taylorotwell  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://twitter.com/taylorotwell'" tppabs="http://twitter.com/taylorotwell" title="Taylor Otwell" target="_blank">Taylor Otwell</a>.<br class="br-mobile--footer">
+                Website built with &hearts; <a href="javascript:if(confirm('http://ikreativ.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://ikreativ.com/'" tppabs="http://ikreativ.com/" title="iKreativ" target="_blank">iKreativ</a>;<br class="br-mobile--footer">
+                responsive by <a href="javascript:if(confirm('http://tighten.co/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://tighten.co/'" tppabs="http://tighten.co/" title="Tighten Co." target="_blank">Tighten Co.</a>
+            </div>
+        </div>
+    </section>
+
+	<script src="bundle.js" tppabs="http://laravel-china.qiniudn.com/assets/js/bundle.js"></script>
+    
+    
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-1.newrelic.com","licenseKey":"39b5324581","applicationID":"10871142","transactionName":"YFwAZUNVXUBUAkANW1kWN0NYG1pdUQRMSkRfSQ==","queueTime":0,"applicationTime":54,"ttGuid":"","agentToken":"","atts":"TBsDEwtPTk4=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-476.min.js"}</script></body>
+</html>

@@ -1,0 +1,512 @@
+<html><!doctype html>
+
+<html lang="en">
+
+<head>
+    <title>Laravel 中文文档</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+    <meta name="author" content="Laravel 中国">
+    <meta name="description" content="Laravel 中文文档, 致力于推动 Laravel, php-fig 等国外 PHP 新技术, 新理念在中国的发展.">
+    <meta name="keywords" content="laravel中国,laravel中文, laravel框架中文, laravel框架中国, php, framework, web, artisans, taylor otwell">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="favicon.png" tppabs="http://laravel-china.qiniudn.com/favicon.png">
+
+    <link href="styles.css" tppabs="http://laravel-china.qiniudn.com/assets/css/styles.css" rel="stylesheet">
+
+    <!--[if IE]><link href="http://laravel-china.qiniudn.com/assets/css/ie.css" rel="stylesheet" type="text/css"><![endif]-->
+
+    <!-- HTML5 elements in less than IE9, yes please! -->
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <!-- If less than IE8 add some JS for the webfont icons -->
+    <!--[if lt IE 8]><script src="http://laravel-china.qiniudn.com/assets/js/ie_font.js"></script><![endif]-->
+
+        
+    
+    <style>
+#documentation nav#docs ul li ul li a {
+font-weight: 600;
+font-size: 13px;
+}
+nav#primary.fixed {
+opacity: .9;
+ position: inherit; 
+top: 0;
+}
+
+p {
+font-size: inherit;
+line-height: 1.4em;
+margin: 0 0 .8em;
+}
+html, body {
+height: 100%;
+font-size: 14px;
+color: #333333;
+font-family: "Heiti SC Light", "Helvetica Neue", Verdana, 微软雅黑, Arial, sans-serif;
+background: #e5e5e5;
+}
+#documentation nav#docs {
+    width: 250px;
+}
+code, kbd, pre, samp {
+    font-size: inherit;
+}
+code {
+background: #F1F1F1;
+color: #f4645f;
+padding: 0 5px;
+border-radius: 3px;
+}
+p {
+line-height: 1.8em;
+}
+#documentation nav#docs {
+width: 170px;
+}
+
+@media only screen and (min-width: 1024px) {
+#documentation #docs-content {
+display: block;
+float: right;
+padding-left: 35px;
+padding-right: 35px;
+width: 830px;
+}
+}
+
+.primary-nav-ul li a {
+border-bottom: 0;
+font-size: 14px;
+padding: 0 0 0 25px;
+width: auto;
+}
+.prettyprint code {
+font-family: Monaco,Consolas,"Lucida Console",monospace;
+font-size: 13px;
+}
+    </style>
+</head>
+
+<body id="index" class="page">
+
+    <!--[if lt IE 7]>
+        <p>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
+    <![endif]-->
+
+    <div id="wrapper">
+
+    <header id="header" role="header">
+    <div class="boxed">
+        <div id="tagline">
+            <h1><a href="index.htm" tppabs="http://laravel-china.org/" style="color:white; font-wight:bold;">Laravel China</a></h1>
+        </div>
+
+        <div id="version">
+            <ul class="nolist">
+                                    <li class="current">
+                        <a href="docs.htm" tppabs="http://laravel-china.org/docs/4-2" title="4.2">4.2</a>
+                    </li>
+                            </ul>
+        </div>
+    </div>
+</header>
+
+<nav id="primary">
+    <div class="boxed">
+        <div id="logo-head">
+            <a href="index.htm" tppabs="http://laravel-china.org/"><img src="logo-head.png" tppabs="http://laravel-china.qiniudn.com/assets/img/logo-head.png" alt="Laravel"></a>
+        </div>
+        <ul class="primary-nav-ul">
+            <li class="current-item"><a href="docs.htm" tppabs="http://laravel-china.org/docs/docs" title="Documentation">文档</a></li>
+            <li><a href="javascript:if(confirm('http://phphub.org/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://phphub.org/'" tppabs="http://phphub.org/" title="PHPhub"  target="_blank">论坛</a></li>
+            <li><a href="javascript:if(confirm('https://github.com/laravel-china/docs  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://github.com/laravel-china/docs'" tppabs="https://github.com/laravel-china/docs"  target="_blank">纠错</a></li>
+            <li><a href="javascript:if(confirm('http://laravel.com/api/4.2/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/api/4.2/'" tppabs="http://laravel.com/api/4.2/" title="Laravel Framework API"  target="_blank">API</a></li>
+        </ul>
+        <a href="#" class="show-primary-nav">菜单</a>
+    </div>
+</nav>
+
+<div id="content">
+
+    <section id="documentation">
+        <article class="boxed">
+
+            <ul class="version-picker--mobile nolist">
+                                <li class="current">
+                    <a href="docs.htm" tppabs="http://laravel-china.org/docs/4-2" title="4.2">4.2</a>
+                </li>
+                            </ul>
+            <a href="#" class="docs-show" data-show-text="Navigate" data-hide-text="Close">Navigate</a>
+
+            <nav id="docs">
+                <ul>
+<li>前言
+
+<ul>
+<li><a href="introduction.htm" tppabs="http://laravel-china.org/docs/introduction">Laravel 介绍</a></li>
+<li><a href="quick.htm" tppabs="http://laravel-china.org/docs/quick">快速入门</a></li>
+<li><a href="releases.htm" tppabs="http://laravel-china.org/docs/releases">框架更新记录</a></li>
+<li><a href="upgrade.htm" tppabs="http://laravel-china.org/docs/upgrade">升级指南</a></li>
+</ul></li>
+<li>快速上手
+
+<ul>
+<li><a href="installation.htm" tppabs="http://laravel-china.org/docs/installation">安装文档</a></li>
+<li><a href="configuration.htm" tppabs="http://laravel-china.org/docs/configuration">配置信息</a></li>
+<li><a href="homestead.htm" tppabs="http://laravel-china.org/docs/homestead">Homestead</a></li>
+<li><a href="lifecycle.htm" tppabs="http://laravel-china.org/docs/lifecycle">程序的生命周期</a></li>
+<li><a href="routing.htm" tppabs="http://laravel-china.org/docs/routing">路由 Routing</a></li>
+<li><a href="requests.htm" tppabs="http://laravel-china.org/docs/requests">处理用户请求和输入</a></li>
+<li><a href="responses.htm" tppabs="http://laravel-china.org/docs/responses">视图和响应</a></li>
+<li><a href="controllers.htm" tppabs="http://laravel-china.org/docs/controllers">控制器</a></li>
+<li><a href="errors.htm" tppabs="http://laravel-china.org/docs/errors">错误和日志</a></li>
+</ul></li>
+<li>更多 Laravel 知识
+
+<ul>
+<li><a href="security.htm" tppabs="http://laravel-china.org/docs/security">身份认证功能</a></li>
+<li><a href="billing.htm" tppabs="http://laravel-china.org/docs/billing">收费系统</a></li>
+<li><a href="cache.htm" tppabs="http://laravel-china.org/docs/cache">缓存</a></li>
+<li><a href="extending.htm" tppabs="http://laravel-china.org/docs/extending">扩展框架</a></li>
+<li><a href="events.htm" tppabs="http://laravel-china.org/docs/events">事件</a></li>
+<li><a href="facades.htm" tppabs="http://laravel-china.org/docs/facades">Facades</a></li>
+<li><a href="html.htm" tppabs="http://laravel-china.org/docs/html">表单和HTML</a></li>
+<li><a href="helpers.htm" tppabs="http://laravel-china.org/docs/helpers">帮助函数</a></li>
+<li><a href="ioc.htm" tppabs="http://laravel-china.org/docs/ioc">IoC Container</a></li>
+<li><a href="localization.htm" tppabs="http://laravel-china.org/docs/localization">本地化</a></li>
+<li><a href="mail.htm" tppabs="http://laravel-china.org/docs/mail">邮件发送 Mail</a></li>
+<li><a href="packages.htm" tppabs="http://laravel-china.org/docs/packages">扩展包开发</a></li>
+<li><a href="pagination.htm" tppabs="http://laravel-china.org/docs/pagination">分页功能</a></li>
+<li><a href="queues.htm" tppabs="http://laravel-china.org/docs/queues">队列</a></li>
+<li><a href="security.htm" tppabs="http://laravel-china.org/docs/security">安全</a></li>
+<li><a href="session.htm" tppabs="http://laravel-china.org/docs/session">会话</a></li>
+<li><a href="ssh.htm" tppabs="http://laravel-china.org/docs/ssh">远程连接模块 SSH</a></li>
+<li><a href="templates.htm" tppabs="http://laravel-china.org/docs/templates">模版引擎</a></li>
+<li><a href="testing.htm" tppabs="http://laravel-china.org/docs/testing">单元测试</a></li>
+<li><a href="validation.htm" tppabs="http://laravel-china.org/docs/validation">表单验证</a></li>
+</ul></li>
+<li>数据库 Database
+
+<ul>
+<li><a href="database.htm" tppabs="http://laravel-china.org/docs/database">数据库简单使用</a></li>
+<li><a href="queries.htm" tppabs="http://laravel-china.org/docs/queries">查询构造器</a></li>
+<li><a href="eloquent.htm" tppabs="http://laravel-china.org/docs/eloquent">Eloquent ORM</a></li>
+<li><a href="schema.htm" tppabs="http://laravel-china.org/docs/schema">表结构构造器</a></li>
+<li><a href="migrations.htm" tppabs="http://laravel-china.org/docs/migrations">Migrations &amp; Seeding</a></li>
+<li><a href="redis.htm" tppabs="http://laravel-china.org/docs/redis">Redis</a></li>
+</ul></li>
+<li>命令行 Artisan CLI
+
+<ul>
+<li><a href="artisan.htm" tppabs="http://laravel-china.org/docs/artisan">命令行 Artisan 介绍</a></li>
+<li><a href="commands.htm" tppabs="http://laravel-china.org/docs/commands">开发 Artisan 命令</a></li>
+</ul></li>
+</ul>
+            </nav>
+
+            <div id="docs-content">
+                <h1>表单与 HTML</h1>
+
+<ul>
+<li><a href="#opening-a-form">开启表单</a></li>
+<li><a href="#csrf-protection">CSRF 保护</a></li>
+<li><a href="#form-model-binding">表单模型绑定</a></li>
+<li><a href="#labels">标签（Label）</a></li>
+<li><a href="#text">文字字段（Text）、多行文字字段（Text Area）、密码字段（Password）和隐藏字段（Hidden Field）</a></li>
+<li><a href="#checkboxes-and-radio-buttons">核取方块（Checkboxe）和单选按钮（Radio Button）</a></li>
+<li><a href="#file-input">文件输入</a></li>
+<li><a href="#drop-down-lists">下拉式选单</a></li>
+<li><a href="#buttons">按钮</a></li>
+<li><a href="#custom-macros">自定义宏（Macro）</a></li>
+<li><a href="#generating-urls">产生 URL</a></li>
+</ul>
+
+<p><a name="opening-a-form"></a></p>
+
+<h2>开启表单</h2>
+
+<h4>开启表单</h4>
+
+<pre><code>{{ Form::open(array('url' =&gt; 'foo/bar')) }}
+    //
+{{ Form::close() }}
+</code></pre>
+
+<p>默认表单使用 POST 方法，当然您也可以指定传参其他表单的方法：</p>
+
+<pre><code>echo Form::open(array('url' =&gt; 'foo/bar', 'method' =&gt; 'put'))
+</code></pre>
+
+<blockquote>
+  <p><strong>注意：</strong> 因为 HTML 表单只支持 <code>POST</code> 和 <code>GET</code> 方法，所以在使用 <code>PUT</code> 及 <code>DELETE</code> 的方法时，Laravel 将会自动加入隐藏的 <code>_method</code> 字段到表单中，来伪装表单传送的方法。</p>
+</blockquote>
+
+<p>您也可以建立指向命名的路由或控制器至表单：</p>
+
+<pre><code>echo Form::open(array('route' =&gt; 'route.name'))
+
+echo Form::open(array('action' =&gt; 'Controller@method'))
+</code></pre>
+
+<p>您也可以传递路由参数：</p>
+
+<pre><code>echo Form::open(array('route' =&gt; array('route.name', $user-&gt;id)))
+
+echo Form::open(array('action' =&gt; array('Controller@method', $user-&gt;id)))
+</code></pre>
+
+<p>如果您的表单允许上传文件，可以加入 <code>files</code> 选项到参数中:</p>
+
+<pre><code>echo Form::open(array('url' =&gt; 'foo/bar', 'files' =&gt; true))
+</code></pre>
+
+<p><a name="csrf-protection"></a></p>
+
+<h2>CSRF 保护</h2>
+
+<h4>添加 CSRF Token 到表单</h4>
+
+<p>Laravel 提供简易的方法，让您可以保护您的应用程序不受到 CSRF (跨网站请求伪造) 攻击。首先 Laravel 会自动在用户的 session 中放置随机的 token，别担心这些会自动完成。这个 CSRF 参数会用隐藏字段的方式自动加到您的表单中，您也可以使用 <code>token</code> 的方法去产生这个隐藏的 CSRF token 字段：</p>
+
+<pre><code>echo Form::token();
+</code></pre>
+
+<h4>附加 CSRF 过滤器到路由</h4>
+
+<pre><code>Route::post('profile', array('before' =&gt; 'csrf', function()
+{
+    //
+}));
+</code></pre>
+
+<p><a name="form-model-binding"></a></p>
+
+<h2>表单模型绑定</h2>
+
+<h4>开启模型表单</h4>
+
+<p>您经常会想要将模型内容加入至表单中，您可以使用 <code>Form::model</code> 方法实现：</p>
+
+<pre><code>echo Form::model($user, array('route' =&gt; array('user.update', $user-&gt;id)))
+</code></pre>
+
+<p>现在当您产生表单元素时，如 text 字段，模型的值将会自动比对到字段名称，并设定此字段值，举例来说，用户模型的 <code>email</code> 属性，将会设定到名称为 <code>email</code> 的 text 字段的字段值，不仅如此，当 Session 中有与字段名称相符的名称， Session 的值将会优先于模型的值，而优先顺序如下：</p>
+
+<ol>
+<li>Session 的数据 (旧的输入值)</li>
+<li>明确传递的数据</li>
+<li>模型属性数据</li>
+</ol>
+
+<p>这样可以允许您快速地建立表单，不仅是绑定模型数据，也可以在服务器端数据验证错误时，轻松的回填用户输入的旧数据！</p>
+
+<blockquote>
+  <p><strong>注意：</strong> 当使用 <code>Form::model</code> 方法时，必须确保有使用 <code>Form::close</code> 方法来关闭表单！</p>
+</blockquote>
+
+<p><a name="labels"></a></p>
+
+<h2>标签（Label）</h2>
+
+<h4>产生标签（Label）元素</h4>
+
+<pre><code>echo Form::label('email', 'E-Mail Address');
+</code></pre>
+
+<h4>指定额外的 HTML 属性</h4>
+
+<pre><code>echo Form::label('email', 'E-Mail Address', array('class' =&gt; 'awesome'));
+</code></pre>
+
+<blockquote>
+  <p><strong>注意：</strong> 在建立标签时，任何您建立的表单元素名称与标签相符时，将会自动在 ID 属性建立与标签名称相同的 ID。</p>
+</blockquote>
+
+<p><a name="text"></a></p>
+
+<h2>文字字段、多行文字字段、密码字段,、隐藏字段</h2>
+
+<h4>产生文字字段</h4>
+
+<pre><code>echo Form::text('username');
+</code></pre>
+
+<h4>指定默认值</h4>
+
+<pre><code>echo Form::text('email', 'example@gmail.com');
+</code></pre>
+
+<blockquote>
+  <p><strong>注意：</strong> <em>hidden</em> 和 <em>textarea</em> 方法和 <em>text</em> 方法使用属性参数是相同的。</p>
+</blockquote>
+
+<h4>产生密码输入字段</h4>
+
+<pre><code>echo Form::password('password');
+</code></pre>
+
+<h4>产生其他输入字段</h4>
+
+<pre><code>echo Form::email($name, $value = null, $attributes = array());
+echo Form::file($name, $attributes = array());
+</code></pre>
+
+<p><a name="checkboxes-and-radio-buttons"></a></p>
+
+<h2>复选框和单选项钮</h2>
+
+<h4>产生复选框或单选按钮</h4>
+
+<pre><code>echo Form::checkbox('name', 'value');
+
+echo Form::radio('name', 'value');
+</code></pre>
+
+<h4>产生已选取的复选框或单选按钮</h4>
+
+<pre><code>echo Form::checkbox('name', 'value', true);
+
+echo Form::radio('name', 'value', true);
+</code></pre>
+
+<p><a name="file-input"></a></p>
+
+<h2>文件输入</h2>
+
+<h4>产生文件输入</h4>
+
+<pre><code>echo Form::file('image');
+</code></pre>
+
+<blockquote>
+  <p><strong>注意：</strong>表单必须已将 <code>files</code> 选项设定为 <code>true</code>。</p>
+</blockquote>
+
+<p><a name="drop-down-lists"></a></p>
+
+<h2>下拉式选单</h2>
+
+<h4>产生下拉式选单</h4>
+
+<pre><code>echo Form::select('size', array('L' =&gt; 'Large', 'S' =&gt; 'Small'));
+</code></pre>
+
+<h4>产生选择默认值的下拉式选单</h4>
+
+<pre><code>echo Form::select('size', array('L' =&gt; 'Large', 'S' =&gt; 'Small'), 'S');
+</code></pre>
+
+<h4>产生群组清单</h4>
+
+<pre><code>echo Form::select('animal', array(
+    'Cats' =&gt; array('leopard' =&gt; 'Leopard'),
+    'Dogs' =&gt; array('spaniel' =&gt; 'Spaniel'),
+));
+</code></pre>
+
+<h4>产生范围的下拉式选单</h4>
+
+<pre><code>echo Form::selectRange('number', 10, 20);
+</code></pre>
+
+<h4>产生月份名称的清单</h4>
+
+<pre><code>echo Form::selectMonth('month');
+</code></pre>
+
+<p><a name="buttons"></a></p>
+
+<h2>按钮</h2>
+
+<h4>产生提交按钮</h4>
+
+<pre><code>echo Form::submit('Click Me!');
+</code></pre>
+
+<blockquote>
+  <p><strong>注意：</strong> 需要产生按钮（Button）元素吗? 可以试着使用 <em>button</em> 方法去产生按钮（Button）元素，button 方法与 <em>submit</em> 使用属性参数是相同的。</p>
+</blockquote>
+
+<p><a name="custom-macros"></a></p>
+
+<h2>自定义宏</h2>
+
+<h4>注册表单宏</h4>
+
+<p>您可以轻松的定义您自己的表单类的辅助方法叫「宏（macros）」，首先只要注册 宏 ，并给预期名称及封闭函数：</p>
+
+<pre><code>Form::macro('myField', function()
+{
+    return '&lt;input type="awesome"&gt;';
+});
+</code></pre>
+
+<p>现在您可以使用注册的名称调用您的宏：</p>
+
+<h4>调用自定义表单宏</h4>
+
+<pre><code>echo Form::myField();
+</code></pre>
+
+<p><a name="generating-urls"></a></p>
+
+<h2>产生 URL</h2>
+
+<p>更多产生 URL 的信息，请参阅文件<a href="helpers.htm#urls" tppabs="http://laravel-china.org/docs/helpers#urls">辅助方法</a>。</p>
+            </div>
+
+        </article>
+    </section>
+
+</div>
+
+<footer id="foot" class="textcenter">
+    <div class="boxed">
+
+        <nav id="secondary">
+            <div id="logo-foot">
+                <a href="javascript:if(confirm('http://laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/'" tppabs="http://laravel.com/"><img src="logo-foot.png" tppabs="http://laravel-china.qiniudn.com/assets/img/logo-foot.png" alt="Laravel"></a>
+            </div>
+            <ul>
+                <li><a href="javascript:if(confirm('http://laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/'" tppabs="http://laravel.com/"  target="_blank">官网</a></li>
+                <li><a href="javascript:if(confirm('https://forge.laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://forge.laravel.com/'" tppabs="https://forge.laravel.com/"  target="_blank">Hosting</a></li>
+                <li><a href="javascript:if(confirm('http://laravel.com/docs  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/docs'" tppabs="http://laravel.com/docs" title="Documentation"  target="_blank">英文文档</a></li>
+                <li><a href="javascript:if(confirm('http://github.com/laravel/laravel  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://github.com/laravel/laravel'" tppabs="http://github.com/laravel/laravel" title="Github"  target="_blank">Laravel at Github</a></li>
+                <li><a href="javascript:if(confirm('http://laravel.io/forum  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.io/forum'" tppabs="http://laravel.io/forum" title="Laravel Forums"  target="_blank">英文论坛</a></li>
+                <li><a href="javascript:if(confirm('http://twitter.com/laravelphp  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://twitter.com/laravelphp'" tppabs="http://twitter.com/laravelphp" title="Laravel on Twitter"  target="_blank">Twitter</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</footer>
+
+<div id="top">
+    <a href="#index" title="Back to the top">
+        <i class="icon-chevron-up"></i>
+    </a>
+</div>
+
+
+    </div>
+
+    <section id="copyright" class="textcenter">
+        <div class="boxed">
+            <div class="animated slideInLeft">
+                Laravel is a trademark of Taylor Otwell.<br class="br-mobile--footer">
+                Copyright &copy; <a href="javascript:if(confirm('http://twitter.com/taylorotwell  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://twitter.com/taylorotwell'" tppabs="http://twitter.com/taylorotwell" title="Taylor Otwell" target="_blank">Taylor Otwell</a>.<br class="br-mobile--footer">
+                Website built with &hearts; <a href="javascript:if(confirm('http://ikreativ.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://ikreativ.com/'" tppabs="http://ikreativ.com/" title="iKreativ" target="_blank">iKreativ</a>;<br class="br-mobile--footer">
+                responsive by <a href="javascript:if(confirm('http://tighten.co/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://tighten.co/'" tppabs="http://tighten.co/" title="Tighten Co." target="_blank">Tighten Co.</a>
+            </div>
+        </div>
+    </section>
+
+	<script src="bundle.js" tppabs="http://laravel-china.qiniudn.com/assets/js/bundle.js"></script>
+    
+    
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-1.newrelic.com","licenseKey":"39b5324581","applicationID":"10871142","transactionName":"YFwAZUNVXUBUAkANW1kWN0NYG1pdUQRMSkRfSQ==","queueTime":0,"applicationTime":63,"ttGuid":"","agentToken":"","atts":"TBsDEwtPTk4=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-476.min.js"}</script></body>
+</html>

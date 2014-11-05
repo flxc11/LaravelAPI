@@ -1,0 +1,415 @@
+<html><!doctype html>
+
+<html lang="en">
+
+<head>
+    <title>Laravel 中文文档</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+    <meta name="author" content="Laravel 中国">
+    <meta name="description" content="Laravel 中文文档, 致力于推动 Laravel, php-fig 等国外 PHP 新技术, 新理念在中国的发展.">
+    <meta name="keywords" content="laravel中国,laravel中文, laravel框架中文, laravel框架中国, php, framework, web, artisans, taylor otwell">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="favicon.png" tppabs="http://laravel-china.qiniudn.com/favicon.png">
+
+    <link href="styles.css" tppabs="http://laravel-china.qiniudn.com/assets/css/styles.css" rel="stylesheet">
+
+    <!--[if IE]><link href="http://laravel-china.qiniudn.com/assets/css/ie.css" rel="stylesheet" type="text/css"><![endif]-->
+
+    <!-- HTML5 elements in less than IE9, yes please! -->
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <!-- If less than IE8 add some JS for the webfont icons -->
+    <!--[if lt IE 8]><script src="http://laravel-china.qiniudn.com/assets/js/ie_font.js"></script><![endif]-->
+
+        
+    
+    <style>
+#documentation nav#docs ul li ul li a {
+font-weight: 600;
+font-size: 13px;
+}
+nav#primary.fixed {
+opacity: .9;
+ position: inherit; 
+top: 0;
+}
+
+p {
+font-size: inherit;
+line-height: 1.4em;
+margin: 0 0 .8em;
+}
+html, body {
+height: 100%;
+font-size: 14px;
+color: #333333;
+font-family: "Heiti SC Light", "Helvetica Neue", Verdana, 微软雅黑, Arial, sans-serif;
+background: #e5e5e5;
+}
+#documentation nav#docs {
+    width: 250px;
+}
+code, kbd, pre, samp {
+    font-size: inherit;
+}
+code {
+background: #F1F1F1;
+color: #f4645f;
+padding: 0 5px;
+border-radius: 3px;
+}
+p {
+line-height: 1.8em;
+}
+#documentation nav#docs {
+width: 170px;
+}
+
+@media only screen and (min-width: 1024px) {
+#documentation #docs-content {
+display: block;
+float: right;
+padding-left: 35px;
+padding-right: 35px;
+width: 830px;
+}
+}
+
+.primary-nav-ul li a {
+border-bottom: 0;
+font-size: 14px;
+padding: 0 0 0 25px;
+width: auto;
+}
+.prettyprint code {
+font-family: Monaco,Consolas,"Lucida Console",monospace;
+font-size: 13px;
+}
+    </style>
+</head>
+
+<body id="index" class="page">
+
+    <!--[if lt IE 7]>
+        <p>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
+    <![endif]-->
+
+    <div id="wrapper">
+
+    <header id="header" role="header">
+    <div class="boxed">
+        <div id="tagline">
+            <h1><a href="index.htm" tppabs="http://laravel-china.org/" style="color:white; font-wight:bold;">Laravel China</a></h1>
+        </div>
+
+        <div id="version">
+            <ul class="nolist">
+                                    <li class="current">
+                        <a href="docs.htm" tppabs="http://laravel-china.org/docs/4-2" title="4.2">4.2</a>
+                    </li>
+                            </ul>
+        </div>
+    </div>
+</header>
+
+<nav id="primary">
+    <div class="boxed">
+        <div id="logo-head">
+            <a href="index.htm" tppabs="http://laravel-china.org/"><img src="logo-head.png" tppabs="http://laravel-china.qiniudn.com/assets/img/logo-head.png" alt="Laravel"></a>
+        </div>
+        <ul class="primary-nav-ul">
+            <li class="current-item"><a href="docs.htm" tppabs="http://laravel-china.org/docs/docs" title="Documentation">文档</a></li>
+            <li><a href="javascript:if(confirm('http://phphub.org/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://phphub.org/'" tppabs="http://phphub.org/" title="PHPhub"  target="_blank">论坛</a></li>
+            <li><a href="javascript:if(confirm('https://github.com/laravel-china/docs  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://github.com/laravel-china/docs'" tppabs="https://github.com/laravel-china/docs"  target="_blank">纠错</a></li>
+            <li><a href="javascript:if(confirm('http://laravel.com/api/4.2/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/api/4.2/'" tppabs="http://laravel.com/api/4.2/" title="Laravel Framework API"  target="_blank">API</a></li>
+        </ul>
+        <a href="#" class="show-primary-nav">菜单</a>
+    </div>
+</nav>
+
+<div id="content">
+
+    <section id="documentation">
+        <article class="boxed">
+
+            <ul class="version-picker--mobile nolist">
+                                <li class="current">
+                    <a href="docs.htm" tppabs="http://laravel-china.org/docs/4-2" title="4.2">4.2</a>
+                </li>
+                            </ul>
+            <a href="#" class="docs-show" data-show-text="Navigate" data-hide-text="Close">Navigate</a>
+
+            <nav id="docs">
+                <ul>
+<li>前言
+
+<ul>
+<li><a href="introduction.htm" tppabs="http://laravel-china.org/docs/introduction">Laravel 介绍</a></li>
+<li><a href="quick.htm" tppabs="http://laravel-china.org/docs/quick">快速入门</a></li>
+<li><a href="releases.htm" tppabs="http://laravel-china.org/docs/releases">框架更新记录</a></li>
+<li><a href="upgrade.htm" tppabs="http://laravel-china.org/docs/upgrade">升级指南</a></li>
+</ul></li>
+<li>快速上手
+
+<ul>
+<li><a href="installation.htm" tppabs="http://laravel-china.org/docs/installation">安装文档</a></li>
+<li><a href="configuration.htm" tppabs="http://laravel-china.org/docs/configuration">配置信息</a></li>
+<li><a href="homestead.htm" tppabs="http://laravel-china.org/docs/homestead">Homestead</a></li>
+<li><a href="lifecycle.htm" tppabs="http://laravel-china.org/docs/lifecycle">程序的生命周期</a></li>
+<li><a href="routing.htm" tppabs="http://laravel-china.org/docs/routing">路由 Routing</a></li>
+<li><a href="requests.htm" tppabs="http://laravel-china.org/docs/requests">处理用户请求和输入</a></li>
+<li><a href="responses.htm" tppabs="http://laravel-china.org/docs/responses">视图和响应</a></li>
+<li><a href="controllers.htm" tppabs="http://laravel-china.org/docs/controllers">控制器</a></li>
+<li><a href="errors.htm" tppabs="http://laravel-china.org/docs/errors">错误和日志</a></li>
+</ul></li>
+<li>更多 Laravel 知识
+
+<ul>
+<li><a href="security.htm" tppabs="http://laravel-china.org/docs/security">身份认证功能</a></li>
+<li><a href="billing.htm" tppabs="http://laravel-china.org/docs/billing">收费系统</a></li>
+<li><a href="cache.htm" tppabs="http://laravel-china.org/docs/cache">缓存</a></li>
+<li><a href="extending.htm" tppabs="http://laravel-china.org/docs/extending">扩展框架</a></li>
+<li><a href="events.htm" tppabs="http://laravel-china.org/docs/events">事件</a></li>
+<li><a href="facades.htm" tppabs="http://laravel-china.org/docs/facades">Facades</a></li>
+<li><a href="html.htm" tppabs="http://laravel-china.org/docs/html">表单和HTML</a></li>
+<li><a href="helpers.htm" tppabs="http://laravel-china.org/docs/helpers">帮助函数</a></li>
+<li><a href="ioc.htm" tppabs="http://laravel-china.org/docs/ioc">IoC Container</a></li>
+<li><a href="localization.htm" tppabs="http://laravel-china.org/docs/localization">本地化</a></li>
+<li><a href="mail.htm" tppabs="http://laravel-china.org/docs/mail">邮件发送 Mail</a></li>
+<li><a href="packages.htm" tppabs="http://laravel-china.org/docs/packages">扩展包开发</a></li>
+<li><a href="pagination.htm" tppabs="http://laravel-china.org/docs/pagination">分页功能</a></li>
+<li><a href="queues.htm" tppabs="http://laravel-china.org/docs/queues">队列</a></li>
+<li><a href="security.htm" tppabs="http://laravel-china.org/docs/security">安全</a></li>
+<li><a href="session.htm" tppabs="http://laravel-china.org/docs/session">会话</a></li>
+<li><a href="ssh.htm" tppabs="http://laravel-china.org/docs/ssh">远程连接模块 SSH</a></li>
+<li><a href="templates.htm" tppabs="http://laravel-china.org/docs/templates">模版引擎</a></li>
+<li><a href="testing.htm" tppabs="http://laravel-china.org/docs/testing">单元测试</a></li>
+<li><a href="validation.htm" tppabs="http://laravel-china.org/docs/validation">表单验证</a></li>
+</ul></li>
+<li>数据库 Database
+
+<ul>
+<li><a href="database.htm" tppabs="http://laravel-china.org/docs/database">数据库简单使用</a></li>
+<li><a href="queries.htm" tppabs="http://laravel-china.org/docs/queries">查询构造器</a></li>
+<li><a href="eloquent.htm" tppabs="http://laravel-china.org/docs/eloquent">Eloquent ORM</a></li>
+<li><a href="schema.htm" tppabs="http://laravel-china.org/docs/schema">表结构构造器</a></li>
+<li><a href="migrations.htm" tppabs="http://laravel-china.org/docs/migrations">Migrations &amp; Seeding</a></li>
+<li><a href="redis.htm" tppabs="http://laravel-china.org/docs/redis">Redis</a></li>
+</ul></li>
+<li>命令行 Artisan CLI
+
+<ul>
+<li><a href="artisan.htm" tppabs="http://laravel-china.org/docs/artisan">命令行 Artisan 介绍</a></li>
+<li><a href="commands.htm" tppabs="http://laravel-china.org/docs/commands">开发 Artisan 命令</a></li>
+</ul></li>
+</ul>
+            </nav>
+
+            <div id="docs-content">
+                <h1>Laravel Homestead</h1>
+
+<ul>
+<li><a href="#introduction">介绍</a></li>
+<li><a href="#included-software">内建软件</a></li>
+<li><a href="#installation-and-setup">安装与设定</a></li>
+<li><a href="#daily-usage">日常使用</a></li>
+<li><a href="#ports">端口</a></li>
+</ul>
+
+<p><a name="introduction"></a></p>
+
+<h2>介绍</h2>
+
+<p>Laravel 致力于让 PHP 开发体验更愉快，也包含您的本地开发环境。<a href="javascript:if(confirm('http://vagrantup.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://vagrantup.com/'" tppabs="http://vagrantup.com/">vagrant</a> 一个简单、优雅的方式来管理与供应虚拟机器。</p>
+
+<p>Laravel Homestead 是一个官方预载的 Vagrant “封装包”，提供您一个完美的开发环境，不需要您在您的本机端安装 PHP、网页服务器或任何服务器软件。不用担心搞乱您的系统！Vagrant 封装包完全搞定。如果有什么地方损坏了，您只要删掉重来即可。</p>
+
+<p>Homestead 可以在任何 Windows, Mac 或 Linux 上面运行，里面包含了 Nginx 网页服务器、PHP 5.5、MySQL、Postgres、Redis、Memcached 还有所有您开发 Laravel 应用程序所需的软件。</p>
+
+<p>Homestead 创建且测试于 Vagrant 1.6 上。</p>
+
+<p><a name="included-software"></a></p>
+
+<h2>内建软件</h2>
+
+<ul>
+<li>Ubuntu 14.04</li>
+<li>PHP 5.5</li>
+<li>Nginx</li>
+<li>MySQL</li>
+<li>Postgres</li>
+<li>Node (With Bower, Grunt, and Gulp)</li>
+<li>Redis</li>
+<li>Memcached</li>
+<li>Beanstalkd</li>
+<li><a href="ssh.htm#envoy-task-runner" tppabs="http://laravel-china.org/docs/ssh#envoy-task-runner">Laravel Envoy</a></li>
+<li>Fabric + HipChat Extension</li>
+</ul>
+
+<p><a name="installation-and-setup"></a></p>
+
+<h2>安装与设定</h2>
+
+<h3>安装 VirtualBox 与 Vagrant</h3>
+
+<p>在启动您的 Homestead 环境之前，您必须先安装 <a href="javascript:if(confirm('https://www.virtualbox.org/wiki/Downloads  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://www.virtualbox.org/wiki/Downloads'" tppabs="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a> 和 <a href="javascript:if(confirm('http://www.vagrantup.com/downloads.html  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://www.vagrantup.com/downloads.html'" tppabs="http://www.vagrantup.com/downloads.html">Vagrant</a>. 两套软件在各平台都有提供易用的视觉化安装软件。</p>
+
+<h3>增加 Vagrant 封装包</h3>
+
+<p>当 VirtualBox 和 Vagrant 安装完成后，您需要在终端机执行以下列命令将 'laravel/homestead' 封装包安装进您的 Vagrant 安装软件中。下载封装包会根据您的网速速度花费一点时间：</p>
+
+<pre><code>vagrant box add laravel/homestead
+</code></pre>
+
+<h3>复制 Homestead 软件源</h3>
+
+<p>一旦封装包已经被加进您的 Vagrant 后，您应该克隆或下载这个 <code>repository</code> ，<code>Homestead</code> 目录中放置所有您的 Laravel 项目，如此 homestead 封装包就可以运行您所有的 Laravel（和 PHP）项目。</p>
+
+<pre><code>git clone https://github.com/laravel/homestead.git Homestead
+</code></pre>
+
+<h3>设定您的 SSH 密钥</h3>
+
+<p>在将其放入版本库之前，您需要编辑下 <code>Homestead.yaml</code> 文件。您可以在文件中设定您的 SSH 公开密钥，以及您主要机器与 Homestead 虚拟机器之间的共享目录。</p>
+
+<p>如果没有 SSH 密钥 在 Mac 和 Linux 平台下，您可以利用下面的命令来创建一个 SSH 密钥:</p>
+
+<pre><code>ssh-keygen -t rsa -C "your@email.com"
+</code></pre>
+
+<p>在 Windows 下，您需要安装 <a href="javascript:if(confirm('http://git-scm.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://git-scm.com/'" tppabs="http://git-scm.com/">Git</a> 并且使用包含在 Git 里的 <code>Git Bash</code> 来执行上述的命令。另外您也可以使用 <a href="javascript:if(confirm('http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html'" tppabs="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">PuTTY</a> 和 <a href="javascript:if(confirm('http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html'" tppabs="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">PuTTYgen</a>。</p>
+
+<p>一旦您创建了一个 SSH 密钥，记得在您的 <code>Homestead.yaml</code> 文件中的 <code>authorize</code> 属性指明密钥路径。</p>
+
+<h3>设定您的共享文件夹</h3>
+
+<p><code>Homestead.yaml</code> 文件中的 <code>folders</code> 属性列出所有您想跟您的 Homestead 环境共享的文件夹列表。这些文件夹中的文件若有更动，他们将会同步在您的本机与 Homestead 环境里。您可以将您需要的共享文件夹都设定进去。</p>
+
+<h3>设定您的 Nginx 站点</h3>
+
+<p>对 Nginx 不熟悉? 没关系。<code>sites</code> 属性允许您简单的将一个 <code>域名</code> 对应到一个您在 homestead 环境中的目录。在 <code>Homestead.yaml</code> 文件中有默认一个简单的站点配置样例提您参考。同样的，您可以添加任何您需要的站点到您的 Homestead 环境中。Homestead 可以作为您开发项目时的一个方便的虚拟化环境。</p>
+
+<h3>Bash Aliases</h3>
+
+<p>如果要增加 Bash aliases 到您的 Homestead 封装包中，只要加到 Homestead 目录根目录下的 <code>aliases</code> 文件中。</p>
+
+<h3>启动 Vagrant 封装包</h3>
+
+<p>当您根据您的情况编辑完 <code>Homestead.yaml</code> 后，在终端机里，从 Homestead 目录里执行 <code>vagrant up</code> 命令。Vagrant 将会开启虚拟机，并且自动设定您的共享目录和 Nginx 站点。</p>
+
+<p>为了能访问您的 Nginx 站点，别忘记在本机的 <code>hosts</code> 文件中将"域名"加进去。<code>hosts</code> 文件会将您的本地网域的站点请求重定向跳转至您的 Homestead 环境中。在 Mac 和 Linux，该文件放在 <code>/etc/hosts</code>。在 Windows 环境中，它被放置在 <code>C:\Windows\System32\drivers\etc\hosts</code>。您要加进去的内容类似如下：</p>
+
+<pre><code>127.0.0.1  homestead.app
+</code></pre>
+
+<p>一旦您将网址加进您的 <code>hosts</code> 文件中，您本机可以从端口 8000 通过您的浏览器获取到您的站点。</p>
+
+<pre><code>http://homestead.app:8000
+</code></pre>
+
+<p>继续读下去，您会学到如何链接到您的数据库。</p>
+
+<p><a name="daily-usage"></a></p>
+
+<h2>日常使用</h2>
+
+<h3>通过 SSH 连接</h3>
+
+<p>要通过 SSH 连接您的 Homestead 环境，您需要使用您设定在 <code>Homestead.yaml</code> 文件中的 SSH 密钥连接 <code>127.0.0.1</code> 的端口 2222。您也可以轻易的从您的 <code>Homestead</code> 目录下执行 <code>vagrant ssh</code> 命令来连接。</p>
+
+<p>如果您想要更简便，您可以将下面的 alias 加到您的 <code>~/.bash_aliases</code> 或是 <code>~/.bash_profile</code> 中：</p>
+
+<pre><code>alias vm='ssh vagrant@127.0.0.1 -p 2222'
+</code></pre>
+
+<h3>连接您的数据库</h3>
+
+<p>在 <code>Homestead</code> 封装包中，MySQL 与 Postgres 两套数据库都已预装其中。为了更简便，Laravel 的 <code>local</code> 环境下的数据库配置已经默认设置为 <code>homestead</code> 。</p>
+
+<p>如果您想要从您的本机上通过 Navicat 或者是 Sequel Pro 连接您的 MySQL 或者 Postgres 数据库，您可以连接 <code>127.0.0.1</code> 的 端口 33060 (MySQL) 或 54320 (Postgres)。而帐号密码分别是 <code>homestead</code> / <code>secret</code>。</p>
+
+<blockquote>
+  <p><strong>附注:</strong> 您应该使用这些非标准的端口从外部来链接到虚拟机里的数据库, 而在虚拟机里面使用默认的端口连接本地的服务, 如 3306 and 5432 .</p>
+</blockquote>
+
+<h3>增加更多的站点</h3>
+
+<p>一旦您的 Homestead 环境上架且运行后，您可能会需要为您的 Laravel 应用程序增加够多的 Nginx 站点。您可以在一台 Homestead 环境中运行非常多 Laravel 安装软件。可以通过如下两个方式：第一，可以在您的 <code>Homestead.yaml</code> 文件中增加站点然后执行 <code>vagrant provision</code>。</p>
+
+<p>另外，您也可以使用放在您的 Homestead 环境中的 <code>serve</code> 命令。您需要 SSH 进入您的 Homestead 环境中，并执行下列命令：</p>
+
+<pre><code>serve domain.app /home/vagrant/Code/path/to/public/directory
+</code></pre>
+
+<blockquote>
+  <p><strong>附注:</strong> 在执行 <code>serve</code> 命令过后，别忘记将新的站点加进您本机的 <code>hosts</code> 文件中。</p>
+</blockquote>
+
+<p><a name="ports"></a></p>
+
+<h2>连接端口</h2>
+
+<p>以下的本地端口将会被重定向跳转至您的 Homestead 环境：</p>
+
+<ul>
+<li><strong>SSH:</strong> 2222 -> Forwards To 22</li>
+<li><strong>HTTP:</strong> 8000 -> Forwards To 80</li>
+<li><strong>MySQL:</strong> 33060 -> Forwards To 3306</li>
+<li><strong>Postgres:</strong> 54320 -> Forwards To 5432</li>
+</ul>
+            </div>
+
+        </article>
+    </section>
+
+</div>
+
+<footer id="foot" class="textcenter">
+    <div class="boxed">
+
+        <nav id="secondary">
+            <div id="logo-foot">
+                <a href="javascript:if(confirm('http://laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/'" tppabs="http://laravel.com/"><img src="logo-foot.png" tppabs="http://laravel-china.qiniudn.com/assets/img/logo-foot.png" alt="Laravel"></a>
+            </div>
+            <ul>
+                <li><a href="javascript:if(confirm('http://laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/'" tppabs="http://laravel.com/"  target="_blank">官网</a></li>
+                <li><a href="javascript:if(confirm('https://forge.laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://forge.laravel.com/'" tppabs="https://forge.laravel.com/"  target="_blank">Hosting</a></li>
+                <li><a href="javascript:if(confirm('http://laravel.com/docs  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/docs'" tppabs="http://laravel.com/docs" title="Documentation"  target="_blank">英文文档</a></li>
+                <li><a href="javascript:if(confirm('http://github.com/laravel/laravel  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://github.com/laravel/laravel'" tppabs="http://github.com/laravel/laravel" title="Github"  target="_blank">Laravel at Github</a></li>
+                <li><a href="javascript:if(confirm('http://laravel.io/forum  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.io/forum'" tppabs="http://laravel.io/forum" title="Laravel Forums"  target="_blank">英文论坛</a></li>
+                <li><a href="javascript:if(confirm('http://twitter.com/laravelphp  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://twitter.com/laravelphp'" tppabs="http://twitter.com/laravelphp" title="Laravel on Twitter"  target="_blank">Twitter</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</footer>
+
+<div id="top">
+    <a href="#index" title="Back to the top">
+        <i class="icon-chevron-up"></i>
+    </a>
+</div>
+
+
+    </div>
+
+    <section id="copyright" class="textcenter">
+        <div class="boxed">
+            <div class="animated slideInLeft">
+                Laravel is a trademark of Taylor Otwell.<br class="br-mobile--footer">
+                Copyright &copy; <a href="javascript:if(confirm('http://twitter.com/taylorotwell  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://twitter.com/taylorotwell'" tppabs="http://twitter.com/taylorotwell" title="Taylor Otwell" target="_blank">Taylor Otwell</a>.<br class="br-mobile--footer">
+                Website built with &hearts; <a href="javascript:if(confirm('http://ikreativ.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://ikreativ.com/'" tppabs="http://ikreativ.com/" title="iKreativ" target="_blank">iKreativ</a>;<br class="br-mobile--footer">
+                responsive by <a href="javascript:if(confirm('http://tighten.co/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://tighten.co/'" tppabs="http://tighten.co/" title="Tighten Co." target="_blank">Tighten Co.</a>
+            </div>
+        </div>
+    </section>
+
+	<script src="bundle.js" tppabs="http://laravel-china.qiniudn.com/assets/js/bundle.js"></script>
+    
+    
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-1.newrelic.com","licenseKey":"39b5324581","applicationID":"10871142","transactionName":"YFwAZUNVXUBUAkANW1kWN0NYG1pdUQRMSkRfSQ==","queueTime":0,"applicationTime":64,"ttGuid":"","agentToken":"","atts":"TBsDEwtPTk4=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-476.min.js"}</script></body>
+</html>

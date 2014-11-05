@@ -1,0 +1,543 @@
+<html><!doctype html>
+
+<html lang="en">
+
+<head>
+    <title>Laravel 中文文档</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+    <meta name="author" content="Laravel 中国">
+    <meta name="description" content="Laravel 中文文档, 致力于推动 Laravel, php-fig 等国外 PHP 新技术, 新理念在中国的发展.">
+    <meta name="keywords" content="laravel中国,laravel中文, laravel框架中文, laravel框架中国, php, framework, web, artisans, taylor otwell">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="favicon.png" tppabs="http://laravel-china.qiniudn.com/favicon.png">
+
+    <link href="styles.css" tppabs="http://laravel-china.qiniudn.com/assets/css/styles.css" rel="stylesheet">
+
+    <!--[if IE]><link href="http://laravel-china.qiniudn.com/assets/css/ie.css" rel="stylesheet" type="text/css"><![endif]-->
+
+    <!-- HTML5 elements in less than IE9, yes please! -->
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <!-- If less than IE8 add some JS for the webfont icons -->
+    <!--[if lt IE 8]><script src="http://laravel-china.qiniudn.com/assets/js/ie_font.js"></script><![endif]-->
+
+        
+    
+    <style>
+#documentation nav#docs ul li ul li a {
+font-weight: 600;
+font-size: 13px;
+}
+nav#primary.fixed {
+opacity: .9;
+ position: inherit; 
+top: 0;
+}
+
+p {
+font-size: inherit;
+line-height: 1.4em;
+margin: 0 0 .8em;
+}
+html, body {
+height: 100%;
+font-size: 14px;
+color: #333333;
+font-family: "Heiti SC Light", "Helvetica Neue", Verdana, 微软雅黑, Arial, sans-serif;
+background: #e5e5e5;
+}
+#documentation nav#docs {
+    width: 250px;
+}
+code, kbd, pre, samp {
+    font-size: inherit;
+}
+code {
+background: #F1F1F1;
+color: #f4645f;
+padding: 0 5px;
+border-radius: 3px;
+}
+p {
+line-height: 1.8em;
+}
+#documentation nav#docs {
+width: 170px;
+}
+
+@media only screen and (min-width: 1024px) {
+#documentation #docs-content {
+display: block;
+float: right;
+padding-left: 35px;
+padding-right: 35px;
+width: 830px;
+}
+}
+
+.primary-nav-ul li a {
+border-bottom: 0;
+font-size: 14px;
+padding: 0 0 0 25px;
+width: auto;
+}
+.prettyprint code {
+font-family: Monaco,Consolas,"Lucida Console",monospace;
+font-size: 13px;
+}
+    </style>
+</head>
+
+<body id="index" class="page">
+
+    <!--[if lt IE 7]>
+        <p>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
+    <![endif]-->
+
+    <div id="wrapper">
+
+    <header id="header" role="header">
+    <div class="boxed">
+        <div id="tagline">
+            <h1><a href="index.htm" tppabs="http://laravel-china.org/" style="color:white; font-wight:bold;">Laravel China</a></h1>
+        </div>
+
+        <div id="version">
+            <ul class="nolist">
+                                    <li class="current">
+                        <a href="docs.htm" tppabs="http://laravel-china.org/docs/4-2" title="4.2">4.2</a>
+                    </li>
+                            </ul>
+        </div>
+    </div>
+</header>
+
+<nav id="primary">
+    <div class="boxed">
+        <div id="logo-head">
+            <a href="index.htm" tppabs="http://laravel-china.org/"><img src="logo-head.png" tppabs="http://laravel-china.qiniudn.com/assets/img/logo-head.png" alt="Laravel"></a>
+        </div>
+        <ul class="primary-nav-ul">
+            <li class="current-item"><a href="docs.htm" tppabs="http://laravel-china.org/docs/docs" title="Documentation">文档</a></li>
+            <li><a href="javascript:if(confirm('http://phphub.org/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://phphub.org/'" tppabs="http://phphub.org/" title="PHPhub"  target="_blank">论坛</a></li>
+            <li><a href="javascript:if(confirm('https://github.com/laravel-china/docs  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://github.com/laravel-china/docs'" tppabs="https://github.com/laravel-china/docs"  target="_blank">纠错</a></li>
+            <li><a href="javascript:if(confirm('http://laravel.com/api/4.2/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/api/4.2/'" tppabs="http://laravel.com/api/4.2/" title="Laravel Framework API"  target="_blank">API</a></li>
+        </ul>
+        <a href="#" class="show-primary-nav">菜单</a>
+    </div>
+</nav>
+
+<div id="content">
+
+    <section id="documentation">
+        <article class="boxed">
+
+            <ul class="version-picker--mobile nolist">
+                                <li class="current">
+                    <a href="docs.htm" tppabs="http://laravel-china.org/docs/4-2" title="4.2">4.2</a>
+                </li>
+                            </ul>
+            <a href="#" class="docs-show" data-show-text="Navigate" data-hide-text="Close">Navigate</a>
+
+            <nav id="docs">
+                <ul>
+<li>前言
+
+<ul>
+<li><a href="introduction.htm" tppabs="http://laravel-china.org/docs/introduction">Laravel 介绍</a></li>
+<li><a href="quick.htm" tppabs="http://laravel-china.org/docs/quick">快速入门</a></li>
+<li><a href="releases.htm" tppabs="http://laravel-china.org/docs/releases">框架更新记录</a></li>
+<li><a href="upgrade.htm" tppabs="http://laravel-china.org/docs/upgrade">升级指南</a></li>
+</ul></li>
+<li>快速上手
+
+<ul>
+<li><a href="installation.htm" tppabs="http://laravel-china.org/docs/installation">安装文档</a></li>
+<li><a href="configuration.htm" tppabs="http://laravel-china.org/docs/configuration">配置信息</a></li>
+<li><a href="homestead.htm" tppabs="http://laravel-china.org/docs/homestead">Homestead</a></li>
+<li><a href="lifecycle.htm" tppabs="http://laravel-china.org/docs/lifecycle">程序的生命周期</a></li>
+<li><a href="routing.htm" tppabs="http://laravel-china.org/docs/routing">路由 Routing</a></li>
+<li><a href="requests.htm" tppabs="http://laravel-china.org/docs/requests">处理用户请求和输入</a></li>
+<li><a href="responses.htm" tppabs="http://laravel-china.org/docs/responses">视图和响应</a></li>
+<li><a href="controllers.htm" tppabs="http://laravel-china.org/docs/controllers">控制器</a></li>
+<li><a href="errors.htm" tppabs="http://laravel-china.org/docs/errors">错误和日志</a></li>
+</ul></li>
+<li>更多 Laravel 知识
+
+<ul>
+<li><a href="security.htm" tppabs="http://laravel-china.org/docs/security">身份认证功能</a></li>
+<li><a href="billing.htm" tppabs="http://laravel-china.org/docs/billing">收费系统</a></li>
+<li><a href="cache.htm" tppabs="http://laravel-china.org/docs/cache">缓存</a></li>
+<li><a href="extending.htm" tppabs="http://laravel-china.org/docs/extending">扩展框架</a></li>
+<li><a href="events.htm" tppabs="http://laravel-china.org/docs/events">事件</a></li>
+<li><a href="facades.htm" tppabs="http://laravel-china.org/docs/facades">Facades</a></li>
+<li><a href="html.htm" tppabs="http://laravel-china.org/docs/html">表单和HTML</a></li>
+<li><a href="helpers.htm" tppabs="http://laravel-china.org/docs/helpers">帮助函数</a></li>
+<li><a href="ioc.htm" tppabs="http://laravel-china.org/docs/ioc">IoC Container</a></li>
+<li><a href="localization.htm" tppabs="http://laravel-china.org/docs/localization">本地化</a></li>
+<li><a href="mail.htm" tppabs="http://laravel-china.org/docs/mail">邮件发送 Mail</a></li>
+<li><a href="packages.htm" tppabs="http://laravel-china.org/docs/packages">扩展包开发</a></li>
+<li><a href="pagination.htm" tppabs="http://laravel-china.org/docs/pagination">分页功能</a></li>
+<li><a href="queues.htm" tppabs="http://laravel-china.org/docs/queues">队列</a></li>
+<li><a href="security.htm" tppabs="http://laravel-china.org/docs/security">安全</a></li>
+<li><a href="session.htm" tppabs="http://laravel-china.org/docs/session">会话</a></li>
+<li><a href="ssh.htm" tppabs="http://laravel-china.org/docs/ssh">远程连接模块 SSH</a></li>
+<li><a href="templates.htm" tppabs="http://laravel-china.org/docs/templates">模版引擎</a></li>
+<li><a href="testing.htm" tppabs="http://laravel-china.org/docs/testing">单元测试</a></li>
+<li><a href="validation.htm" tppabs="http://laravel-china.org/docs/validation">表单验证</a></li>
+</ul></li>
+<li>数据库 Database
+
+<ul>
+<li><a href="database.htm" tppabs="http://laravel-china.org/docs/database">数据库简单使用</a></li>
+<li><a href="queries.htm" tppabs="http://laravel-china.org/docs/queries">查询构造器</a></li>
+<li><a href="eloquent.htm" tppabs="http://laravel-china.org/docs/eloquent">Eloquent ORM</a></li>
+<li><a href="schema.htm" tppabs="http://laravel-china.org/docs/schema">表结构构造器</a></li>
+<li><a href="migrations.htm" tppabs="http://laravel-china.org/docs/migrations">Migrations &amp; Seeding</a></li>
+<li><a href="redis.htm" tppabs="http://laravel-china.org/docs/redis">Redis</a></li>
+</ul></li>
+<li>命令行 Artisan CLI
+
+<ul>
+<li><a href="artisan.htm" tppabs="http://laravel-china.org/docs/artisan">命令行 Artisan 介绍</a></li>
+<li><a href="commands.htm" tppabs="http://laravel-china.org/docs/commands">开发 Artisan 命令</a></li>
+</ul></li>
+</ul>
+            </nav>
+
+            <div id="docs-content">
+                <h1>视图（ View ）与响应（ Response ）</h1>
+
+<ul>
+<li><a href="#basic-responses">基本响应</a></li>
+<li><a href="#redirects">重定向跳转</a></li>
+<li><a href="#views">视图</a></li>
+<li><a href="#view-composers">视图组件</a></li>
+<li><a href="#special-responses">特殊响应</a></li>
+<li><a href="#response-macros">响应宏</a></li>
+</ul>
+
+<p><a name="basic-responses"></a></p>
+
+<h2>基本响应</h2>
+
+<h4>从路由回传字串</h4>
+
+<pre><code>Route::get('/', function()
+{
+    return 'Hello World';
+});
+</code></pre>
+
+<h4>建立自定义响应</h4>
+
+<p><code>Response</code> 实例继承了 <code>Symfony\Component\HttpFoundation\Response</code> 类，其提供了很多方法建立 HTTP 响应。</p>
+
+<pre><code>$response = Response::make($contents, $statusCode);
+
+$response-&gt;header('Content-Type', $value);
+
+return $response;
+</code></pre>
+
+<p>如果想要使用 <code>Response</code> 类的方法，但最终回传视图给用户，您可以使用简便的 <code>Response::view</code> 方法：</p>
+
+<pre><code>return Response::view('hello')-&gt;header('Content-Type', $type);
+</code></pre>
+
+<h4>附加 Cookies 到响应</h4>
+
+<pre><code>$cookie = Cookie::make('name', 'value');
+
+return Response::make($content)-&gt;withCookie($cookie);
+</code></pre>
+
+<p><a name="redirects"></a></p>
+
+<h2>重定向跳转</h2>
+
+<h4>回传重定向跳转</h4>
+
+<pre><code>return Redirect::to('user/login');
+</code></pre>
+
+<h4>回传重定向跳转并且加上快闪数据（ Flash Data ）</h4>
+
+<pre><code>return Redirect::to('user/login')-&gt;with('message', 'Login Failed');
+</code></pre>
+
+<blockquote>
+  <p><strong>提示：</strong> <code>with</code> 方法会设定快闪数据到 session，所以可以使用 <code>Session::get</code> 取得数据。</p>
+</blockquote>
+
+<h4>回传根据路由名称的重定向跳转</h4>
+
+<pre><code>return Redirect::route('login');
+</code></pre>
+
+<h4>回传根据路由名称的重定向跳转，并给予路由参数赋值</h4>
+
+<pre><code>return Redirect::route('profile', array(1));
+</code></pre>
+
+<h4>回传根据路由名称的重定向跳转，并给予特定名称路由参数赋值</h4>
+
+<pre><code>return Redirect::route('profile', array('user' =&gt; 1));
+</code></pre>
+
+<h4>回传根据控制器动作的重定向跳转</h4>
+
+<pre><code>return Redirect::action('HomeController@index');
+</code></pre>
+
+<h4>回传根据控制器动作的重定向跳转，并给予参数赋值</h4>
+
+<pre><code>return Redirect::action('UserController@profile', array(1));
+</code></pre>
+
+<h4>回传根据控制器动作的重定向跳转，并给予特定名称参数赋值</h4>
+
+<pre><code>return Redirect::action('UserController@profile', array('user' =&gt; 1));
+</code></pre>
+
+<p><a name="views"></a></p>
+
+<h2>Views</h2>
+
+<p>视图通常包含 HTML，并且提供便利的方式分开控制器和表现层。视图储存在 <code>app/views</code> 目录下。</p>
+
+<p>一个简单的视图可能看起来如下：</p>
+
+<pre><code>&lt;!-- View stored in app/views/greeting.php --&gt;
+
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello, &lt;?php echo $name; ?&gt;&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>视图可以像这样回传到用户浏览器：</p>
+
+<pre><code>Route::get('/', function()
+{
+    return View::make('greeting', array('name' =&gt; 'Taylor'));
+});
+</code></pre>
+
+<p><code>View::make</code> 方法传入的第二个参数是可以在视图里使用的数组数据。</p>
+
+<h4>传递数据到视图</h4>
+
+<pre><code>// 使用通用方式
+$view = View::make('greeting')-&gt;with('name', 'Steve');
+
+// 使用魔术方法
+$view = View::make('greeting')-&gt;withName('steve');
+</code></pre>
+
+<p>上面的例子里，将可以在视图里使用变量 <code>$name</code> ，其值为 <code>Steve</code> 。</p>
+
+<p>您可以传入数组作为 <code>make</code> 方法第二个参数：</p>
+
+<pre><code>$view = View::make('greetings', $data);
+</code></pre>
+
+<p>您也可以设定所有视图共用数据：</p>
+
+<pre><code>View::share('name', 'Steve');
+</code></pre>
+
+<h4>传递子视图到视图</h4>
+
+<p>有时候您可能想要传递子视图到另一个视图。例如，有一个子视图存在 <code>app/views/child/view.php</code>，可以像这样将它传递到另一个视图：</p>
+
+<pre><code>$view = View::make('greeting')-&gt;nest('child', 'child.view');
+
+$view = View::make('greeting')-&gt;nest('child', 'child.view', $data);
+</code></pre>
+
+<p>如此可以在视图里渲染子视图：</p>
+
+<pre><code>&lt;html&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello!&lt;/h1&gt;
+        &lt;?php echo $child; ?&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h4>确认视图是否存在</h4>
+
+<p>如果您需要确认视图是否存在，使用 <code>View::exists</code> 方法：</p>
+
+<pre><code>if (View::exists('emails.customer'))
+{
+    //
+}
+</code></pre>
+
+<p><a name="view-composers"></a></p>
+
+<h2>视图组件</h2>
+
+<p>视图组件是当渲染视图时调用的回调函数或类方法。如果您想在每次渲染某些视图时绑定数据，视图组件可以把这样的逻辑组织在同一个地方。因此，视图组件的作用可能如 "view models" 或是 "presenters"。</p>
+
+<h4>定义一个组件</h4>
+
+<pre><code>View::composer('profile', function($view)
+{
+    $view-&gt;with('count', User::count());
+});
+</code></pre>
+
+<p>之后每当 <code>profile</code> 视图被渲染时， <code>count</code> 变量就会被绑定到视图。</p>
+
+<p>您也可以把一个组件同时附加到很多视图。</p>
+
+<pre><code>View::composer(array('profile','dashboard'), function($view)
+{
+    $view-&gt;with('count', User::count());
+});
+</code></pre>
+
+<p>如使用类作为组件，提供了可以从 <a href="ioc.htm" tppabs="http://laravel-china.org/docs/ioc">IoC 容器</a>自动解析组件的好处，您可以像这样做：</p>
+
+<pre><code>View::composer('profile', 'ProfileComposer');
+</code></pre>
+
+<p>一个视图组件类应该像这样定义：</p>
+
+<pre><code>class ProfileComposer {
+
+    public function compose($view)
+    {
+        $view-&gt;with('count', User::count());
+    }
+
+}
+</code></pre>
+
+<h4>定义很多组件</h4>
+
+<p>您可以使用 <code>composers</code> 方法群组视图组件：</p>
+
+<pre><code>View::composers(array(
+    'AdminComposer' =&gt; array('admin.index', 'admin.profile'),
+    'UserComposer' =&gt; 'user',
+));
+</code></pre>
+
+<blockquote>
+  <p><strong>提示：</strong> 组件类没有一定要放在什么地方，您可以将它们放在任何地方，只要可以使用 <code>composer.json</code> 自动载入即可。</p>
+</blockquote>
+
+<h3>视图创建者</h3>
+
+<p>视图 <strong>创建者</strong> 几乎和组件运作方式一样；只是他们会在视图初始化时就立刻建立起来。要注册一个创建者，只要使用 <code>creator</code> 方法：</p>
+
+<pre><code>View::creator('profile', function($view)
+{
+    $view-&gt;with('count', User::count());
+});
+</code></pre>
+
+<p><a name="special-responses"></a></p>
+
+<h2>特殊响应</h2>
+
+<h4>建立 JSON 响应</h4>
+
+<pre><code>return Response::json(array('name' =&gt; 'Steve', 'state' =&gt; 'CA'));
+</code></pre>
+
+<h4>建立 JSONP 响应</h4>
+
+<pre><code>return Response::json(array('name' =&gt; 'Steve', 'state' =&gt; 'CA'))-&gt;setCallback(Input::get('callback'));
+</code></pre>
+
+<h4>建立下载文件响应</h4>
+
+<pre><code>return Response::download($pathToFile);
+
+return Response::download($pathToFile, $name, $headers);
+</code></pre>
+
+<blockquote>
+  <p><strong>提醒：</strong> 管理文件下载的扩展包，Symfony HttpFoundation，要求下载文件名必须为 ASCII 。</p>
+</blockquote>
+
+<p><a name="response-macros"></a></p>
+
+<h2>响应宏</h2>
+
+<p>如果您想要自定义可以在很多路由和控制器重复使用的响应，可以使用 <code>Response::macro</code> 方法：</p>
+
+<pre><code>Response::macro('caps', function($value)
+{
+    return Response::make(strtoupper($value));
+});
+</code></pre>
+
+<p><code>macro</code> 方法第一个参数为宏名称，第二个参数为闭合函数。闭合函数会在 <code>Response</code> 调用宏名称的时候被执行：</p>
+
+<pre><code>return Response::caps('foo');
+</code></pre>
+
+<p>您可以把定义自己的宏放在 <code>app/start</code> 里面的文件。又或者，您可以将宏组织成独立的文件，并且从其中一个 <code>start</code> 文件里引入。</p>
+            </div>
+
+        </article>
+    </section>
+
+</div>
+
+<footer id="foot" class="textcenter">
+    <div class="boxed">
+
+        <nav id="secondary">
+            <div id="logo-foot">
+                <a href="javascript:if(confirm('http://laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/'" tppabs="http://laravel.com/"><img src="logo-foot.png" tppabs="http://laravel-china.qiniudn.com/assets/img/logo-foot.png" alt="Laravel"></a>
+            </div>
+            <ul>
+                <li><a href="javascript:if(confirm('http://laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/'" tppabs="http://laravel.com/"  target="_blank">官网</a></li>
+                <li><a href="javascript:if(confirm('https://forge.laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://forge.laravel.com/'" tppabs="https://forge.laravel.com/"  target="_blank">Hosting</a></li>
+                <li><a href="javascript:if(confirm('http://laravel.com/docs  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/docs'" tppabs="http://laravel.com/docs" title="Documentation"  target="_blank">英文文档</a></li>
+                <li><a href="javascript:if(confirm('http://github.com/laravel/laravel  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://github.com/laravel/laravel'" tppabs="http://github.com/laravel/laravel" title="Github"  target="_blank">Laravel at Github</a></li>
+                <li><a href="javascript:if(confirm('http://laravel.io/forum  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.io/forum'" tppabs="http://laravel.io/forum" title="Laravel Forums"  target="_blank">英文论坛</a></li>
+                <li><a href="javascript:if(confirm('http://twitter.com/laravelphp  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://twitter.com/laravelphp'" tppabs="http://twitter.com/laravelphp" title="Laravel on Twitter"  target="_blank">Twitter</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</footer>
+
+<div id="top">
+    <a href="#index" title="Back to the top">
+        <i class="icon-chevron-up"></i>
+    </a>
+</div>
+
+
+    </div>
+
+    <section id="copyright" class="textcenter">
+        <div class="boxed">
+            <div class="animated slideInLeft">
+                Laravel is a trademark of Taylor Otwell.<br class="br-mobile--footer">
+                Copyright &copy; <a href="javascript:if(confirm('http://twitter.com/taylorotwell  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://twitter.com/taylorotwell'" tppabs="http://twitter.com/taylorotwell" title="Taylor Otwell" target="_blank">Taylor Otwell</a>.<br class="br-mobile--footer">
+                Website built with &hearts; <a href="javascript:if(confirm('http://ikreativ.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://ikreativ.com/'" tppabs="http://ikreativ.com/" title="iKreativ" target="_blank">iKreativ</a>;<br class="br-mobile--footer">
+                responsive by <a href="javascript:if(confirm('http://tighten.co/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://tighten.co/'" tppabs="http://tighten.co/" title="Tighten Co." target="_blank">Tighten Co.</a>
+            </div>
+        </div>
+    </section>
+
+	<script src="bundle.js" tppabs="http://laravel-china.qiniudn.com/assets/js/bundle.js"></script>
+    
+    
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-1.newrelic.com","licenseKey":"39b5324581","applicationID":"10871142","transactionName":"YFwAZUNVXUBUAkANW1kWN0NYG1pdUQRMSkRfSQ==","queueTime":0,"applicationTime":56,"ttGuid":"","agentToken":"","atts":"TBsDEwtPTk4=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-476.min.js"}</script></body>
+</html>

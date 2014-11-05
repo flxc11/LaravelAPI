@@ -1,0 +1,389 @@
+<html><!doctype html>
+
+<html lang="en">
+
+<head>
+    <title>Laravel 中文文档</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+    <meta name="author" content="Laravel 中国">
+    <meta name="description" content="Laravel 中文文档, 致力于推动 Laravel, php-fig 等国外 PHP 新技术, 新理念在中国的发展.">
+    <meta name="keywords" content="laravel中国,laravel中文, laravel框架中文, laravel框架中国, php, framework, web, artisans, taylor otwell">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="favicon.png" tppabs="http://laravel-china.qiniudn.com/favicon.png">
+
+    <link href="styles.css" tppabs="http://laravel-china.qiniudn.com/assets/css/styles.css" rel="stylesheet">
+
+    <!--[if IE]><link href="http://laravel-china.qiniudn.com/assets/css/ie.css" rel="stylesheet" type="text/css"><![endif]-->
+
+    <!-- HTML5 elements in less than IE9, yes please! -->
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <!-- If less than IE8 add some JS for the webfont icons -->
+    <!--[if lt IE 8]><script src="http://laravel-china.qiniudn.com/assets/js/ie_font.js"></script><![endif]-->
+
+        
+    
+    <style>
+#documentation nav#docs ul li ul li a {
+font-weight: 600;
+font-size: 13px;
+}
+nav#primary.fixed {
+opacity: .9;
+ position: inherit; 
+top: 0;
+}
+
+p {
+font-size: inherit;
+line-height: 1.4em;
+margin: 0 0 .8em;
+}
+html, body {
+height: 100%;
+font-size: 14px;
+color: #333333;
+font-family: "Heiti SC Light", "Helvetica Neue", Verdana, 微软雅黑, Arial, sans-serif;
+background: #e5e5e5;
+}
+#documentation nav#docs {
+    width: 250px;
+}
+code, kbd, pre, samp {
+    font-size: inherit;
+}
+code {
+background: #F1F1F1;
+color: #f4645f;
+padding: 0 5px;
+border-radius: 3px;
+}
+p {
+line-height: 1.8em;
+}
+#documentation nav#docs {
+width: 170px;
+}
+
+@media only screen and (min-width: 1024px) {
+#documentation #docs-content {
+display: block;
+float: right;
+padding-left: 35px;
+padding-right: 35px;
+width: 830px;
+}
+}
+
+.primary-nav-ul li a {
+border-bottom: 0;
+font-size: 14px;
+padding: 0 0 0 25px;
+width: auto;
+}
+.prettyprint code {
+font-family: Monaco,Consolas,"Lucida Console",monospace;
+font-size: 13px;
+}
+    </style>
+</head>
+
+<body id="index" class="page">
+
+    <!--[if lt IE 7]>
+        <p>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
+    <![endif]-->
+
+    <div id="wrapper">
+
+    <header id="header" role="header">
+    <div class="boxed">
+        <div id="tagline">
+            <h1><a href="index.htm" tppabs="http://laravel-china.org/" style="color:white; font-wight:bold;">Laravel China</a></h1>
+        </div>
+
+        <div id="version">
+            <ul class="nolist">
+                                    <li class="current">
+                        <a href="docs.htm" tppabs="http://laravel-china.org/docs/4-2" title="4.2">4.2</a>
+                    </li>
+                            </ul>
+        </div>
+    </div>
+</header>
+
+<nav id="primary">
+    <div class="boxed">
+        <div id="logo-head">
+            <a href="index.htm" tppabs="http://laravel-china.org/"><img src="logo-head.png" tppabs="http://laravel-china.qiniudn.com/assets/img/logo-head.png" alt="Laravel"></a>
+        </div>
+        <ul class="primary-nav-ul">
+            <li class="current-item"><a href="docs.htm" tppabs="http://laravel-china.org/docs/docs" title="Documentation">文档</a></li>
+            <li><a href="javascript:if(confirm('http://phphub.org/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://phphub.org/'" tppabs="http://phphub.org/" title="PHPhub"  target="_blank">论坛</a></li>
+            <li><a href="javascript:if(confirm('https://github.com/laravel-china/docs  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://github.com/laravel-china/docs'" tppabs="https://github.com/laravel-china/docs"  target="_blank">纠错</a></li>
+            <li><a href="javascript:if(confirm('http://laravel.com/api/4.2/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/api/4.2/'" tppabs="http://laravel.com/api/4.2/" title="Laravel Framework API"  target="_blank">API</a></li>
+        </ul>
+        <a href="#" class="show-primary-nav">菜单</a>
+    </div>
+</nav>
+
+<div id="content">
+
+    <section id="documentation">
+        <article class="boxed">
+
+            <ul class="version-picker--mobile nolist">
+                                <li class="current">
+                    <a href="docs.htm" tppabs="http://laravel-china.org/docs/4-2" title="4.2">4.2</a>
+                </li>
+                            </ul>
+            <a href="#" class="docs-show" data-show-text="Navigate" data-hide-text="Close">Navigate</a>
+
+            <nav id="docs">
+                <ul>
+<li>前言
+
+<ul>
+<li><a href="introduction.htm" tppabs="http://laravel-china.org/docs/introduction">Laravel 介绍</a></li>
+<li><a href="quick.htm" tppabs="http://laravel-china.org/docs/quick">快速入门</a></li>
+<li><a href="releases.htm" tppabs="http://laravel-china.org/docs/releases">框架更新记录</a></li>
+<li><a href="upgrade.htm" tppabs="http://laravel-china.org/docs/upgrade">升级指南</a></li>
+</ul></li>
+<li>快速上手
+
+<ul>
+<li><a href="installation.htm" tppabs="http://laravel-china.org/docs/installation">安装文档</a></li>
+<li><a href="configuration.htm" tppabs="http://laravel-china.org/docs/configuration">配置信息</a></li>
+<li><a href="homestead.htm" tppabs="http://laravel-china.org/docs/homestead">Homestead</a></li>
+<li><a href="lifecycle.htm" tppabs="http://laravel-china.org/docs/lifecycle">程序的生命周期</a></li>
+<li><a href="routing.htm" tppabs="http://laravel-china.org/docs/routing">路由 Routing</a></li>
+<li><a href="requests.htm" tppabs="http://laravel-china.org/docs/requests">处理用户请求和输入</a></li>
+<li><a href="responses.htm" tppabs="http://laravel-china.org/docs/responses">视图和响应</a></li>
+<li><a href="controllers.htm" tppabs="http://laravel-china.org/docs/controllers">控制器</a></li>
+<li><a href="errors.htm" tppabs="http://laravel-china.org/docs/errors">错误和日志</a></li>
+</ul></li>
+<li>更多 Laravel 知识
+
+<ul>
+<li><a href="security.htm" tppabs="http://laravel-china.org/docs/security">身份认证功能</a></li>
+<li><a href="billing.htm" tppabs="http://laravel-china.org/docs/billing">收费系统</a></li>
+<li><a href="cache.htm" tppabs="http://laravel-china.org/docs/cache">缓存</a></li>
+<li><a href="extending.htm" tppabs="http://laravel-china.org/docs/extending">扩展框架</a></li>
+<li><a href="events.htm" tppabs="http://laravel-china.org/docs/events">事件</a></li>
+<li><a href="facades.htm" tppabs="http://laravel-china.org/docs/facades">Facades</a></li>
+<li><a href="html.htm" tppabs="http://laravel-china.org/docs/html">表单和HTML</a></li>
+<li><a href="helpers.htm" tppabs="http://laravel-china.org/docs/helpers">帮助函数</a></li>
+<li><a href="ioc.htm" tppabs="http://laravel-china.org/docs/ioc">IoC Container</a></li>
+<li><a href="localization.htm" tppabs="http://laravel-china.org/docs/localization">本地化</a></li>
+<li><a href="mail.htm" tppabs="http://laravel-china.org/docs/mail">邮件发送 Mail</a></li>
+<li><a href="packages.htm" tppabs="http://laravel-china.org/docs/packages">扩展包开发</a></li>
+<li><a href="pagination.htm" tppabs="http://laravel-china.org/docs/pagination">分页功能</a></li>
+<li><a href="queues.htm" tppabs="http://laravel-china.org/docs/queues">队列</a></li>
+<li><a href="security.htm" tppabs="http://laravel-china.org/docs/security">安全</a></li>
+<li><a href="session.htm" tppabs="http://laravel-china.org/docs/session">会话</a></li>
+<li><a href="ssh.htm" tppabs="http://laravel-china.org/docs/ssh">远程连接模块 SSH</a></li>
+<li><a href="templates.htm" tppabs="http://laravel-china.org/docs/templates">模版引擎</a></li>
+<li><a href="testing.htm" tppabs="http://laravel-china.org/docs/testing">单元测试</a></li>
+<li><a href="validation.htm" tppabs="http://laravel-china.org/docs/validation">表单验证</a></li>
+</ul></li>
+<li>数据库 Database
+
+<ul>
+<li><a href="database.htm" tppabs="http://laravel-china.org/docs/database">数据库简单使用</a></li>
+<li><a href="queries.htm" tppabs="http://laravel-china.org/docs/queries">查询构造器</a></li>
+<li><a href="eloquent.htm" tppabs="http://laravel-china.org/docs/eloquent">Eloquent ORM</a></li>
+<li><a href="schema.htm" tppabs="http://laravel-china.org/docs/schema">表结构构造器</a></li>
+<li><a href="migrations.htm" tppabs="http://laravel-china.org/docs/migrations">Migrations &amp; Seeding</a></li>
+<li><a href="redis.htm" tppabs="http://laravel-china.org/docs/redis">Redis</a></li>
+</ul></li>
+<li>命令行 Artisan CLI
+
+<ul>
+<li><a href="artisan.htm" tppabs="http://laravel-china.org/docs/artisan">命令行 Artisan 介绍</a></li>
+<li><a href="commands.htm" tppabs="http://laravel-china.org/docs/commands">开发 Artisan 命令</a></li>
+</ul></li>
+</ul>
+            </nav>
+
+            <div id="docs-content">
+                <h1>更新记录</h1>
+
+<ul>
+<li><a href="#laravel-4.2">Laravel 4.2</a></li>
+<li><a href="#laravel-4.1">Laravel 4.1</a></li>
+</ul>
+
+<p><a name="laravel-4.2"></a></p>
+
+<h2>Laravel 4.2</h2>
+
+<p>通过在4.2版本的安装目录下执行 <code>php artisan changes</code> 可以获取此次版本的完整更新列表，或者 查看<a href="javascript:if(confirm('https://github.com/laravel/framework/blob/4.2/src/Illuminate/Foundation/changes.json  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://github.com/laravel/framework/blob/4.2/src/Illuminate/Foundation/changes.json'" tppabs="https://github.com/laravel/framework/blob/4.2/src/Illuminate/Foundation/changes.json">Github 上的更新记录</a>。此记录只含括当前版本的主要功能改进和变更。</p>
+
+<blockquote>
+  <p><strong>附注:</strong> 在 4.2 发布周期内，许多小的BUG修正与功能强化被整合至各个 4.1 的子发行版本中。所以最好确认 Laravel 4.1 版本的更新列表。</p>
+</blockquote>
+
+<h3>PHP 所需最低版本为 5.4</h3>
+
+<p>Laravel 4.2 需要 PHP 5.4 或者更高的版本。此 PHP 的更新版本让我们可以使用 PHP 的新特性：<code>traits</code> 来为如<a href="billing.htm" tppabs="http://laravel-china.org/docs/billing">Laravel Cashier</a> 来提供更具表达力的接口。PHP 5.4 相比 PHP 5.3 ，在性能、速度、执行力效率上都有显著的提高。</p>
+
+<h3>Laravel Forge</h3>
+
+<p>Larvel Forge是一个 Web 应用程序，它提供了一个简单的接口去建立、管理您云端上的 PHP 服务器，如 Linode, DigitalOcean, Rackspace 和 Amazon EC2。支持自动化 nginx 设定、SSH 密钥管理、Cron job 自动化， 通过 NewRelic 或者 Papertrail 进行服务器监控，"Push To Deploy", Laravel queue worker 设定等等。Forge 提供最简单且更实惠的方式来部署所有您的 Laravel 应用程序。</p>
+
+<p>默认在 Laravel 4.2 的安装里， <code>app/config/database.php</code> 配置文件已为 Forge 设定完成，能让新应用在平台上的更方便的部署更加方便。</p>
+
+<p>关于 Laravel Forge 的更多信息可以在<a href="javascript:if(confirm('https://forge.laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://forge.laravel.com/'" tppabs="https://forge.laravel.com/">官方 Forge 网站</a>上找到。</p>
+
+<h3>Laravel Homestead</h3>
+
+<p>Laravel Homestead 是一个为开发强壮的 Laravel 和 PHP 应用程序的所提供的官方 Vagrant 环境，是一个离线的，预先打好包的<code>Vagrant box</code>。绝大多数的 <code>box</code> 依赖软件在发布前已经部署处理完成，这让<code>box</code>可以极快的被启用。Homestead 包含 Nginx 1.6, PHP 5.5.12, MySQL, Postres, Redis, Memcached, Beanstalk, Node, Gulp, Grunt 和 Bower。Homestead 包含一个简单的 <code>Homestead.yaml</code> 配置文件，让您在单一个封装包中能管理多个 Laravel 应用程序。</p>
+
+<p>默认的 Laravel 4.2 安装中包含的 <code>app/config/local/database.php</code> 配置文件使用 Homestead 的数据库作为默认。让 Laravel 初始化安装与设定更为方便。</p>
+
+<p>官方文件已经更新并包含在 <a href="homestead.htm" tppabs="http://laravel-china.org/docs/homestead">Homestead 文件</a>中。</p>
+
+<h3>Laravel Cashier</h3>
+
+<p>Laravel Cashier是一个简单、具有表现力的资源库，用来管理 Stripe 的订阅帐务。虽然在安装中此组件是选用状态，我们仍将Cashier文件包含在主要 Laravel 文件中。此发布版本修复了多个错误、支持多货币还有支持最新的 Stripe API。</p>
+
+<h3>Queue Workers 常驻软件</h3>
+
+<p>Artisan <code>queue:work</code> 命令现在支持 <code>--daemon</code> 参数让 worker 可以以"常驻软件"启用。代表 worker 可以持续的处理队列工作不需要重启框架。这让一个复杂的应用程序部署过程中，使得 CPU 的使用有显著的降低。</p>
+
+<p>更多关于 Queue Workers 常驻软件信息请阅读 <a href="queues.htm#daemon-queue-worker" tppabs="http://laravel-china.org/docs/queues#daemon-queue-worker">queue 文件</a>。</p>
+
+<h3>Mail API Drivers</h3>
+
+<p>Laravel 4.2 为 <code>Mail</code> 函数采用了新的 Mailgun 和 Mandrill API 驱动。对许多应用程序而言，他提供了比 SMTP 更快也更可靠的方法来发送邮件。新的驱动使用了 Guzzle 4 HTTP 资源库。</p>
+
+<h3>软删除 Traits</h3>
+
+<p>对于软删除和全作用域更简洁的方案
+PHP 5.4 的 <code>traits</code> 提供了一个更加简洁的软删除架构和全局作用域, 这些新架构为框架提供了更有扩展性的功能, 并且让框架更加简洁.</p>
+
+<p>更多关于软删除的文档请见: <a href="eloquent.htm#soft-deleting" tppabs="http://laravel-china.org/docs/eloquent#soft-deleting">Eloquent documentation</a>.</p>
+
+<h3>更为方便的 认证(auth) &amp; Remindable Traits</h3>
+
+<p>得益于 PHP 5.4 traits , 我们有了一个更简洁的 用户认证 和 密码提醒接口, 这也让 <code>User</code> 模型文件更加精简.</p>
+
+<h3>"简易分页"</h3>
+
+<p>一个新的 <code>simplePaginate</code> 方法已被加入到查询以及 Eloquent 查询器中。让您在分页视图中，使用简单的"上一页"和"下一页"链接查询更为高效。</p>
+
+<h3>迁移确认</h3>
+
+<p>在正式环境中，破坏性的迁移动作将会被再次确认。如果希望取消提示字串确认请使用 <code>--force</code> 参数。</p>
+
+<p><a name="laravel-4.1"></a></p>
+
+<h2>Laravel 4.1</h2>
+
+<h3>完整更新列表</h3>
+
+<p>通过在4.1版本的安装目录下执行 <code>php artisan changes</code> 来获取此次版本的完整更新列表，或者 查看<a href="javascript:if(confirm('https://github.com/laravel/framework/blob/4.1/src/Illuminate/Foundation/changes.json  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://github.com/laravel/framework/blob/4.1/src/Illuminate/Foundation/changes.json'" tppabs="https://github.com/laravel/framework/blob/4.1/src/Illuminate/Foundation/changes.json">Github 上的更新纪录</a>。此纪录只含括当前版本的主要功能改进和变更。</p>
+
+<h3>新的 SSH 组件</h3>
+
+<p>一个全新的 <code>SSH</code> 组件在此发行版本中登场。此功能让您可以轻易的 SSH 至远程服务器并执行命令。更多信息，可以参阅 <a href="ssh.htm" tppabs="http://laravel-china.org/docs/ssh">SSH 组件文件</a>。</p>
+
+<p>新的 <code>php artisan tail</code> 命令就是使用这个新的 SSH 组件。更多的信息，请参阅 <code>tail</code> <a href="javascript:if(confirm('http://laravel.com/docs/ssh  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/docs/ssh#tailing-remote-logs'" tppabs="http://laravel.com/docs/ssh#tailing-remote-logs">命令集文件</a>。</p>
+
+<h3>Boris In Tinker</h3>
+
+<p>如果您的系统支持 <a href="javascript:if(confirm('https://github.com/d11wtq/boris  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://github.com/d11wtq/boris'" tppabs="https://github.com/d11wtq/boris">Boris REPL</a>，<code>php artisan thinker</code> 命令将会使用到它。系统中也必须先行安装好 <code>readline</code> 和 <code>pcntl</code> 两个 PHP 扩展包。如果您没这些扩展包，从 4.0 之后将会使用到它。</p>
+
+<h3>Eloquent 强化</h3>
+
+<p>Eloquent 新增了新的 <code>hasManyThrough</code> 关系链。想要了解更多，请参见 <a href="eloquent.htm#has-many-through" tppabs="http://laravel-china.org/docs/eloquent#has-many-through">Eloquent 文件</a>。</p>
+
+<p>一个新的 <code>whereHas</code> 方法也同时登场，他将允许<a href="eloquent.htm#querying-relations" tppabs="http://laravel-china.org/docs/eloquent#querying-relations">检索基于关系模型的约束</a>。</p>
+
+<h3>数据库读写分离</h3>
+
+<p>Query Builder 和 Eloquent 目前通过数据库层，已经可以自动做到读写分离。更多的信息，请参考<a href="database.htm#read-write-connections" tppabs="http://laravel-china.org/docs/database#read-write-connections">文件</a>。</p>
+
+<h3>队列优先级</h3>
+
+<p>支持通过在 <code>queue:listen</code> 后面传递一组以逗号分隔的列表来指定队列优先级。</p>
+
+<h3>失败队列工作处理</h3>
+
+<p>现在队列将会自动处理失败的工作，只要在 <code>queue:listen</code> 后加上 <code>--tries</code> 即可。更多的失败工作处理可以参见 <a href="queues.htm#failed-jobs" tppabs="http://laravel-china.org/docs/queues#failed-jobs">队列文件</a>。</p>
+
+<h3>缓存标签</h3>
+
+<p>缓存“区块”已经被“标签”取代。缓存标签允许您将多个“标签”指向同一个缓存对象，而且可以清空所有被指定某个标签的所有对象。更多使用缓存标签信息请见<a href="cache.htm#cache-tags" tppabs="http://laravel-china.org/docs/cache#cache-tags">缓存文件</a>。</p>
+
+<h3>更具弹性的密码提醒</h3>
+
+<p>密码提醒引擎已经可以提供更强大的开发弹性，如：认证密码，显示状态信息等等。使用强化的密码提醒引擎，更多的信息<a href="security.htm#password-reminders-and-reset" tppabs="http://laravel-china.org/docs/security#password-reminders-and-reset">请参阅文件</a>。</p>
+
+<h3>强化路由引擎</h3>
+
+<p>Laravel 4.1 拥有一个完全重新编写的路由层。API 一样不变。然而与 4.0 相比，速度快上 100%。整个引擎大幅的简化，且对于路由表达式的编译大大减少对 Symfony Routing 的依赖。</p>
+
+<h3>强化 Session 引擎</h3>
+
+<p>此发行版本中，我们亦发布了全新的 Session 引擎。如同路由增进的部分，新的 Session 曾更加简化且更快速。我们不再使用 Symfony 的 Session 处理工具，并且使用更简单、更容易维护的自定义解法。</p>
+
+<h3>Doctrine DBAL</h3>
+
+<p>如果您有在您的迁移中使用到 <code>renameColumn</code>，之后您必须在 <code>composer.json</code> 里加入 <code>doctrine/dbal</code> 扩展包。此扩展包不再默认包含在 Laravel 之中。</p>
+            </div>
+
+        </article>
+    </section>
+
+</div>
+
+<footer id="foot" class="textcenter">
+    <div class="boxed">
+
+        <nav id="secondary">
+            <div id="logo-foot">
+                <a href="javascript:if(confirm('http://laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/'" tppabs="http://laravel.com/"><img src="logo-foot.png" tppabs="http://laravel-china.qiniudn.com/assets/img/logo-foot.png" alt="Laravel"></a>
+            </div>
+            <ul>
+                <li><a href="javascript:if(confirm('http://laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/'" tppabs="http://laravel.com/"  target="_blank">官网</a></li>
+                <li><a href="javascript:if(confirm('https://forge.laravel.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://forge.laravel.com/'" tppabs="https://forge.laravel.com/"  target="_blank">Hosting</a></li>
+                <li><a href="javascript:if(confirm('http://laravel.com/docs  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.com/docs'" tppabs="http://laravel.com/docs" title="Documentation"  target="_blank">英文文档</a></li>
+                <li><a href="javascript:if(confirm('http://github.com/laravel/laravel  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://github.com/laravel/laravel'" tppabs="http://github.com/laravel/laravel" title="Github"  target="_blank">Laravel at Github</a></li>
+                <li><a href="javascript:if(confirm('http://laravel.io/forum  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://laravel.io/forum'" tppabs="http://laravel.io/forum" title="Laravel Forums"  target="_blank">英文论坛</a></li>
+                <li><a href="javascript:if(confirm('http://twitter.com/laravelphp  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://twitter.com/laravelphp'" tppabs="http://twitter.com/laravelphp" title="Laravel on Twitter"  target="_blank">Twitter</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</footer>
+
+<div id="top">
+    <a href="#index" title="Back to the top">
+        <i class="icon-chevron-up"></i>
+    </a>
+</div>
+
+
+    </div>
+
+    <section id="copyright" class="textcenter">
+        <div class="boxed">
+            <div class="animated slideInLeft">
+                Laravel is a trademark of Taylor Otwell.<br class="br-mobile--footer">
+                Copyright &copy; <a href="javascript:if(confirm('http://twitter.com/taylorotwell  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://twitter.com/taylorotwell'" tppabs="http://twitter.com/taylorotwell" title="Taylor Otwell" target="_blank">Taylor Otwell</a>.<br class="br-mobile--footer">
+                Website built with &hearts; <a href="javascript:if(confirm('http://ikreativ.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://ikreativ.com/'" tppabs="http://ikreativ.com/" title="iKreativ" target="_blank">iKreativ</a>;<br class="br-mobile--footer">
+                responsive by <a href="javascript:if(confirm('http://tighten.co/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://tighten.co/'" tppabs="http://tighten.co/" title="Tighten Co." target="_blank">Tighten Co.</a>
+            </div>
+        </div>
+    </section>
+
+	<script src="bundle.js" tppabs="http://laravel-china.qiniudn.com/assets/js/bundle.js"></script>
+    
+    
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-1.newrelic.com","licenseKey":"39b5324581","applicationID":"10871142","transactionName":"YFwAZUNVXUBUAkANW1kWN0NYG1pdUQRMSkRfSQ==","queueTime":0,"applicationTime":57,"ttGuid":"","agentToken":"","atts":"TBsDEwtPTk4=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-476.min.js"}</script></body>
+</html>
